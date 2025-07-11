@@ -5,9 +5,9 @@ website:
   title: "Introduction to R Programming Lecture Notes"
   favicon: figures/EC favicon black transparent comp stat.png
   description: "Accompanying webpage with interactive codes and lecture notes for IST3110."
-  # repo-url: https://github.com/r-wasm/quarto-live
-  # repo-actions: [edit, issue]
-  # repo-subdir: "docs"
+  repo-url: https://github.com/Intro-to-Statistical-Programming-with-R
+  repo-actions: [edit, issue]
+  repo-subdir: "docs"
   page-navigation: true
   back-to-top-navigation: true
   navbar: 
