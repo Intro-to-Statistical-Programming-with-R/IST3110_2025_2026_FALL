@@ -1,0 +1,44 @@
+project:
+  type: website
+
+website:
+  title: "Introduction to R Programming Lecture Notes"
+  favicon: figures/EC favicon black transparent comp stat.png
+  description: "Accompanying webpage with interactive codes and lecture notes for IST3110."
+  # repo-url: https://github.com/r-wasm/quarto-live
+  # repo-actions: [edit, issue]
+  # repo-subdir: "docs"
+  page-navigation: true
+  back-to-top-navigation: true
+  navbar: 
+    # title: false
+    logo: figures/intro to r logo black.png
+    logo-alt: "Logo for introduction to R Programming"
+    right: 
+      - href: about.qmd
+  sidebar:
+    style: 'docked'
+    contents:
+      - href: index.qmd
+        text: Preface
+      - section: Exercises and Grading
+        contents:
+          - grading.qmd
+      - section: Lab Sessions
+        contents: 
+          - LabSession01Main.qmd
+  page-footer:
+    background: light # or `dark`
+    left: Copyright 2025, Erhan ÇENE
+    right: This website is built with {{< fa heart title="a heart" >}}, {{< fa droplet title="a droplet" >}}, {{< fa face-grin-tears title="a face with tears" >}}, [{{< fa brands github title="GitHub octocat logo" >}}](https://github.com/erhancene){target=_blank}, [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html){target=_blank} and [Quarto](https://quarto.org/){target=_blank}
+    
+format:
+  live-html:
+    theme: 
+    - cosmo
+    - styles.scss
+    # light: cosmo
+    # dark: darkly
+    mainfont: Nunito
+    toc: true
+    page-layout: full

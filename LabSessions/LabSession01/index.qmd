@@ -1,0 +1,103 @@
+---
+# title: Introduction to Statistical Learning Week 1
+# subtitle: Introduction to Python - Lab Session 1
+# date: 2025-05-30
+# author: Erhan Cene
+# institute: Yildiz Technical University
+# toc: true
+
+format:
+  live-revealjs:
+    footer: "Intro. to Comp. Stat"
+    logo: ../../figures/intro to r logo black.png
+    theme: [default, styles.scss]
+    chalkboard: true
+    scrollable: true
+    controls: true
+    slide-number: c/t
+    progress: true
+    smaller: true
+    touch: true
+    keyboard: true
+    mouse-wheel: true
+    code-link: true
+    header: Lab Session 01 - Intro. to R
+    header-logo: ../../figures/yildiz-teknik-universitesi-logo-en.png
+filters: 
+  - reveal-header
+link-external-icon: true
+link-external-newwindow: true
+
+pyodide:
+  packages:
+    - numpy
+    # - scipy=1.11.1;
+    - micropip
+    # - https://cdn.jsdelivr.net/gh/ErhanCene/IST3110_SUPPLAMENTARY@main/islp-0.4.0-py3-none-any.whl
+    # - https://github.com/ErhanCene/IST3110_SUPPLAMENTARY/blob/main/islp-0.4.0-py3-none-any.whl
+
+---
+
+{{< include ../../_extensions/live/_knitr.qmd >}}
+
+
+## {#title-slide data-menu-title="Title Slide" background="white"} 
+
+[Introduction to Programming with R]{.custom-title}
+
+[Lab Session 01 - Introduction to R]{.custom-subtitle}
+
+<hr class="hr-green">
+
+[Erhan Cene]{.custom-subtitle2}<br>
+[ecene@yildiz.edu.tr]{.custom-subtitle2}<br>
+[*Yildiz Technical University, Department of Statistics*]{.custom-subtitle3}<br>
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[**Published:** Oct 10, 2022]{.body-text-s}
+:::
+
+::: {.column width="50%"}
+[**Last updated:** `r format(Sys.time(), '%b %d, %Y')`]{.body-text-s}
+:::
+
+::::
+
+<!-- ::::{.logo-left} -->
+
+<!-- ```{r} -->
+<!-- #| eval: true -->
+<!-- #| echo: false -->
+<!-- #| fig-alt: "Logo for Yildiz Technical University Deparment of Statistics" -->
+<!-- knitr::include_graphics("../../figures/yildiz-teknik-universitesi-logo-en.png") -->
+<!-- ``` -->
+
+<!-- :::: -->
+
+
+## Origin of the Lab Sessions
+
+
+<!-- ## {#origin data-menu-title="Origin of the Lab Sessions"} -->
+
+<!-- [Origin of the Lab Sessions]{.slide-title} -->
+
+* This slide is based on [lab sessions](https://github.com/intro-stat-learning/ISLP_labs) from [An Introduction to Statistical Learning with Applications in Python](https://hastie.su.domains/ISLP/ISLP_website.pdf.download.html) book.
+* You can reach the original lab session files in `.Rmd` and `.ipynb` formats from [here](https://github.com/intro-stat-learning/ISLP_labs/blob/main/Ch02-statlearn-lab.Rmd) and [here](https://github.com/intro-stat-learning/ISLP_labs/blob/main/Ch02-statlearn-lab.ipynb)
+* There are *three main* differences between these slides and above mentioned original files:
+  * Slides does not require installing Python, Spyder, PyCharm, Anaconda, Jupyter Notebook or Google Colab (Although you can use this approach too).
+  * Slides have interactive version of the lab session examples. (You will understand what I mean when you see them) 
+  * All libraries and dataset will be pre-installed and pre-imported so you don't have to worry about installing packages and importing datasets (Although you should be familiar how to do these.).
+
+## Getting Started
+
+* As you understand from the previous slide, **using these slides** is much easier than the original documents. 
+* Yet, some of the packages may not be available for these slides and can not be installed. So, if such a problem arises you can always use the original lab-session documents. 
+* To use the original version of the lab sessions you need to do two thing:
+  * An installation of `Python3`, which is the specific version of `Python`  used in the labs. 
+  * Access to  `Jupyter`, a very popular `Python` interface that runs code through a file called a *notebook*. 
+
+

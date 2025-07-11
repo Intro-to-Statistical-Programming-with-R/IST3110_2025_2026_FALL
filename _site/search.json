@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "LabSessions/LabSession01/index.html#title-slide",
+    "href": "LabSessions/LabSession01/index.html#title-slide",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "",
+    "text": "Introduction to Programming with R\nLab Session 01 - Introduction to R\n\nErhan Ceneecene@yildiz.edu.trYildiz Technical University, Department of Statistics\n\n\nPublished: Oct 10, 2022\n\nLast updated: Jul 11, 2025"
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#origin-of-the-lab-sessions",
+    "href": "LabSessions/LabSession01/index.html#origin-of-the-lab-sessions",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Origin of the Lab Sessions",
+    "text": "Origin of the Lab Sessions\n\n\n\nThis slide is based on lab sessions from An Introduction to Statistical Learning with Applications in Python book.\nYou can reach the original lab session files in .Rmd and .ipynb formats from here and here\n\nThere are three main differences between these slides and above mentioned original files:\n\nSlides does not require installing Python, Spyder, PyCharm, Anaconda, Jupyter Notebook or Google Colab (Although you can use this approach too).\nSlides have interactive version of the lab session examples. (You will understand what I mean when you see them)\nAll libraries and dataset will be pre-installed and pre-imported so you don’t have to worry about installing packages and importing datasets (Although you should be familiar how to do these.)."
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#getting-started",
+    "href": "LabSessions/LabSession01/index.html#getting-started",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nAs you understand from the previous slide, using these slides is much easier than the original documents.\nYet, some of the packages may not be available for these slides and can not be installed. So, if such a problem arises you can always use the original lab-session documents.\nTo use the original version of the lab sessions you need to do two thing:\n\nAn installation of Python3, which is the specific version of Python used in the labs.\nAccess to Jupyter, a very popular Python interface that runs code through a file called a notebook.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\nLab Session 01 - Intro. to R"
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#installing-python",
+    "href": "LabSessions/LabSession01/index.html#installing-python",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Installing Python",
+    "text": "Installing Python\nYou can download and install Python3 by following the instructions available at anaconda.com.\nThere are a number of ways to get access to Jupyter. Here are just a few:\n\nUsing Google's Colaboratory service: colab.research.google.com/.\nUsing JupyterHub, available at jupyter.org/hub.\nUsing your own jupyter installation. Installation instructions are available at jupyter.org/install."
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#islp-package",
+    "href": "LabSessions/LabSession01/index.html#islp-package",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "ISLP package",
+    "text": "ISLP package\nYou will need to install the ISLP package, which provides access to the datasets and custom-built functions that is provided.\nHopefully the ISLP package will be pre-installed to these slides but if you want to install and use them from Anaconda, Spyder, PyCharm, Jupyter Notebook etc. you can refer to this page for installing the package."
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#basic-commands",
+    "href": "LabSessions/LabSession01/index.html#basic-commands",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Basic Commands",
+    "text": "Basic Commands\nIn this lab, we will introduce some simple Python commands. For more resources about Python in general, readers may want to consult the tutorial at docs.python.org/3/tutorial/.\n\nLike most programming languages, Python uses functions to perform operations.\n\nTo run a function called fun, we type fun(input1,input2), where the inputs (or arguments) input1 and input2 tell Python how to run the function.\n\nA function can have any number of inputs.\nFor example, the print() function outputs a text representation of all of its arguments to the console."
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#an-example-for-print-function",
+    "href": "LabSessions/LabSession01/index.html#an-example-for-print-function",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "An Example for print function",
+    "text": "An Example for print function\n\nBefore hitting the Run Code button try to guess the outcome!!"
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#quarto-pyodide-countdown",
+    "href": "LabSessions/LabSession01/index.html#quarto-pyodide-countdown",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "quarto-{pyodide + countdown}",
+    "text": "quarto-{pyodide + countdown}\nPair code cells with a countdown timer to allow for practice\n\n  \n    −\n    +\n \n 00:10\n \nFill in the following function to say hi!"
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#exercise-1",
+    "href": "LabSessions/LabSession01/index.html#exercise-1",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\nComplete the code such that you obtain the average of numbers from 1 to 10.\n\n\n\n\n\n\n\n\nn = range(1, 11)\nmean = sum(n)/len(n)\nmean\nn = range(1, 11)\nmean = sum(n)/len(n)\nmean\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\nLab Session 01 - Intro. to Python"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to Statistical Learning",
+    "section": "",
+    "text": "This book is created for accompanying lecture notes for the undergraduate course Introduction to R Programming.\nThe motivation behind this book is to provide a comprehensive and easy to understand lecture notes in a tidy way.",
+    "crumbs": [
+      "About the Author!",
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#preface",
+    "href": "index.html#preface",
+    "title": "Introduction to Statistical Learning",
+    "section": "",
+    "text": "This book is created for accompanying lecture notes for the undergraduate course Introduction to R Programming.\nThe motivation behind this book is to provide a comprehensive and easy to understand lecture notes in a tidy way.",
+    "crumbs": [
+      "About the Author!",
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the Author!",
+    "section": "",
+    "text": "I am Erhan Cene, working as an associate professor at the Yildiz Technical University, Istanbul, Turkey in the department of statistics (see university webpage).\nMy broad research interest is on data science and statistical programming especially (but not limited to) in sports analytics and biostatistics (see publication list).\nI mostly give programming courses such as Introduction to Python, Statistical Programming with R, Database and Web Programming along with the Sampling 1 course at the undergraduate level and Data Manipulation and Visualisation course at the graduate level.\nI started to prepare the lecture notes in Rmarkdown format a few years ago, then combined them via bookdown package for better and tidy look. With bookdown I also learned to use GitHub Pages and now I started to use Quarto to add some interactivity on my lecture notes.\nYou can contact with me through linkedin for any enquiry and possible collaboration.\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "grading.html",
+    "href": "grading.html",
+    "title": "Grading Solutions",
+    "section": "",
+    "text": "Interactive exercises can be dynamically graded by defining a custom grading algorithm for each exercise. Instructors can use specialised testing logic and return specific feedback for common mistakes.",
+    "crumbs": [
+      "About the Author!",
+      "Exercises and Grading",
+      "Grading Solutions"
+    ]
+  },
+  {
+    "objectID": "grading.html#adding-grading-to-an-exercise",
+    "href": "grading.html#adding-grading-to-an-exercise",
+    "title": "Grading Solutions",
+    "section": "Adding grading to an exercise",
+    "text": "Adding grading to an exercise\nSuppose we have the following exercise, asking a learner to calculate the average of the first 10 integers.\n\nRPython\n\n\nCalculate the average of all of the integers from 1 to 10.\n\n```{webr}\n#| exercise: ex_1_r\n______(1:10)\n```\n\n\nCalculate the average of all of the integers from 1 to 10.\n\n```{pyodide}\n#| exercise: ex_1_py\nn = range(1, 11)\n______\n```\n\n\n\nWe hope the learner will replace the ______ with the correct code to calculate the average. To grade an exercise, associate checking code with the exercise using a webr block with the check: true cell option set.\nA simple version of exercise grading might check that the student’s result is equal to mean(1:10). If it is, the grading code returns a passing grade, otherwise a failing grade is returned.\n\nRPython\n\n\n```{webr}\n#| exercise: ex_1_r\n#| check: true\nif (identical(.result, mean(1:10))) {\n  list(correct = TRUE, message = \"Nice work!\")\n} else {\n  list(correct = FALSE, message = \"That's incorrect, sorry.\")\n}\n```\n\n\n```{pyodide}\n#| exercise: ex_1_py\n#| check: true\nn = range(1, 11)\nmean = sum(n)/len(n)\nfeedback = None\nif (result == mean):\n  feedback = { \"correct\": True, \"message\": \"Nice work!\" }\nelse:\n  feedback = { \"correct\": False, \"message\": \"That's incorrect, sorry.\" }\nfeedback\n```\n\n\n\n\nOutput\n\nRPython\n\n\nCalculate the average of all of the integers from 1 to 10.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReturn feedback\nFeedback from grading algorithms should be returned in the form of an R list, or Python dictionary, with the following properties:\n\n\n\n\n\n\n\n\nProperty\nType\nDescription\n\n\n\n\ncorrect\nboolean\nIs the student’s code correct?\n\n\nmessage\nstring\nFeedback text to show to the student. Can be a plain string or HTML.\n\n\ntype\nstring\n(Optional) Feedback presentation style. Can be “success”, “info”, “warning”, or “error”.\n\n\n\nFeedback formatted in this way will be displayed as a styled HTML alert.\n\n\n\n\n\n\nNote\n\n\n\nReturning and displaying multiple feedback elements with “append”, “prepend”, or “replace” functionality is planned for a future release of quarto-live.\n\n\n\n\nChecking environment\nA selection of variables are made available for use by grading algorithms in the checking environment. These variable names have been chosen so as to match closely to the existing {learnr} and {gradethis} grading systems.\n\n\n\n\n\n\nWarning\n\n\n\nUnder Python, there is no leading . character in the variable names. For example, the result of evaluating the learner’s code is given in the variable named result.\n\n\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\n.check_code\nCode provided for custom checking algorithm.\n\n\n.engine\nThe execution language, \"r\" or \"python\".\n\n\n.envir_prep\nThe environment before the execution of learner code.\n\n\n.envir_result\nThe environment after the execution of learner code.\n\n\n.evaluate_result\nFull evaluation state of evaluating the learner code.\n\n\n.label\nThe exercise label.\n\n\n.last_value\nThe last value of the evaluated learner code.\n\n\n.result\nThe last value of the evaluated learner code.\n\n\n.solution_code\nSolution code, if provided by the author.\n\n\n.solution\nResult of evaluating the solution code, if provided by the author.\n\n\n.stage\nThe current checking stage (currently only check).\n\n\n.user_code\nExercise code submitted by the user.\n\n\n\n\n\nMore grading examples\nFurther examples of using the full evaluation state provided by the checking environment with grading algorithms are shown below.\n\nFind any result in learner output\n\n\nSource\n\nWrite R code that returns 2468 somewhere, even invisibly:\n\n```{webr}\n#| exercise: example_2\n123\ninvisible(2468)\n456\n```\n\n```{webr}\n#| exercise: example_2\n#| check: true\nresults &lt;- Filter(\\(x) inherits(x, \"result\"), .evaluate_result)\nif(is.null(Find(\\(x) x$value == 2468, results))) {\n  list(correct = FALSE, message = \"Incorrect, sorry.\")\n} else {\n  list(correct = TRUE, message = \"Correct!\")\n}\n```\n\nWrite R code that returns 2468 somewhere, even invisibly:\n\n\n\n\n\n\n\n\n\n\n\n\n\nFeedback for a specific learner error\n\n\nSource\n\n```{webr}\n#| exercise: example_3\n123 + \"456\"\n```\n\n```{webr}\n#| exercise: example_3\n#| check: true\nerrors &lt;- Filter(\\(x) inherits(x, \"error\"), .evaluate_result)\nthis_error &lt;- Filter(\\(x) x$message == \"non-numeric argument to binary operator\", errors)\nif (length(this_error) &gt; 0) {\n  list(\n    correct = FALSE,\n    type = \"info\",\n    message = \"Be careful! In R you cannot add a number and a character string!\"\n  )\n}\n```",
+    "crumbs": [
+      "About the Author!",
+      "Exercises and Grading",
+      "Grading Solutions"
+    ]
+  },
+  {
+    "objectID": "grading.html#python2",
+    "href": "grading.html#python2",
+    "title": "Grading Solutions",
+    "section": "Python2",
+    "text": "Python2",
+    "crumbs": [
+      "About the Author!",
+      "Exercises and Grading",
+      "Grading Solutions"
+    ]
+  },
+  {
+    "objectID": "LabSession01Main.html",
+    "href": "LabSession01Main.html",
+    "title": "Lab Session 01",
+    "section": "",
+    "text": "You can switch to full screen mode by pressing ff.\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "About the Author!",
+      "Lab Sessions",
+      "Lab Session 01"
+    ]
+  }
+]

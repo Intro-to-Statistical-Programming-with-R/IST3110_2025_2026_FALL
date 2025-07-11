@@ -1,0 +1,90 @@
+/*-- scss:defaults --*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Customizing title page elements
+
+$title-large-font-size: 2em;
+$title-medium-font-size: 1.5em;
+$title-small-font-size: 0.8em;
+
+$title-font-type-playfull: 'Chewy';
+$title-font-type-subtitle: 'Poppins';
+$title-font-type-calm: 'Lato';
+$title-color: green;
+$text-color: #9bbead;
+
+// scss variables
+$link-color: green;
+$code-color: magenta;
+$code-bg: #F7F7F7;
+$code-block-font-size: 0.8em;
+$code-block-bg: #F7F7F7;
+
+/*-- scss:rules --*/
+
+*{
+  padding: 0px;
+}
+
+
+.custom-title{
+  font-size: $title-large-font-size;
+  font-family: $title-font-type-playfull, cursive;
+  color: $title-color;
+}
+
+.custom-subtitle{
+  font-size: $title-medium-font-size;
+  font-family: $title-font-type-subtitle, cursive;
+  color: $title-color;
+  font-weight: bold;
+}
+
+
+.custom-subtitle2{
+  font-size: $title-small-font-size;
+  font-family: $title-font-type-calm, cursive;
+  color: $text-color;
+}
+
+.custom-subtitle3{
+  font-size: $title-small-font-size;
+  font-family: $title-font-type-calm, cursive;
+  color: $text-color;
+
+}
+
+
+.body-text-s{
+  font-size: $title-small-font-size;
+  font-family: $title-font-type-calm, Sans-Serif;
+  color: $text-color;
+}
+
+.hr-green {
+  border: 4px solid green;
+}
+
+
+.reveal .reveal-header p{
+  color: $title-color;
+}
+
+.reveal-header .header-logo{
+   max-height: 2em !important;
+}
+
+
+.footer p{
+  color: $title-color;
+}
+
+.reveal .slide-logo {
+   max-height: 2em !important;
+}

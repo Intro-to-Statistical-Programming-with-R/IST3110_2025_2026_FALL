@@ -1,0 +1,52 @@
+---
+title: About the Author!
+# subtitle: Motivation 
+# format: live-html
+engine: knitr
+toc: true
+link-external-icon: true
+link-external-newwindow: true
+
+image: ./figures/erhanceneavesis.png
+about: 
+  template: jolla 
+  image-shape: round
+  image-width: 12em
+  links: # create buttons
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/erhan-%C3%A7ene-03488960/
+      target: _blank # opens link in a new browser tab
+    - icon: github
+      text: GitHub
+      href: https://github.com/erhanCene/
+      target: _blank 
+    - icon: house
+      text: University Webpage
+      href: https://avesis.yildiz.edu.tr/ecene
+      target: _blank 
+    - icon: envelope
+      text: Email
+      href: mailto:ecene@yildiz.edu.tr
+
+---
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+
+.addpad {
+  padding: 20px 100px;
+}
+
+```
+
+::: {.justify .addpad}
+* I am Erhan Cene, working as an associate professor at the Yildiz Technical University, Istanbul, Turkey in the department of statistics ([see university webpage](https://avesis.yildiz.edu.tr/ecene "personal webpage")).
+* My broad research interest is on data science and statistical programming especially (**but not limited to**) in sports analytics and biostatistics ([see publication list](https://avesis.yildiz.edu.tr/ecene/yayinlar "publication list")).
+* I mostly give programming courses such as `Introduction to Python`, `Statistical Programming with R`, `Database` and `Web Programming` along with the `Sampling 1` course at the undergraduate level and `Data Manipulation and Visualisation` course at the graduate level. 
+* I started to prepare the lecture notes in Rmarkdown format a few years ago, then combined them via `bookdown` package for better and tidy look. With bookdown I also learned to use   GitHub Pages and now I started to use Quarto to add some interactivity on my lecture notes.
+* You can contact with me through [linkedin](https://www.linkedin.com/in/erhan-%C3%A7ene-03488960/) for any enquiry and possible collaboration.
+
+:::
