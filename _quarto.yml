@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Introduction to R Programming Lecture Notes"
@@ -10,6 +11,7 @@ website:
   repo-subdir: "docs"
   page-navigation: true
   back-to-top-navigation: true
+
   navbar: 
     # title: false
     logo: figures/intro to r logo black.png
