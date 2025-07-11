@@ -1,0 +1,111 @@
+---
+title: "R and RStudio"
+subtitle: "Installing R and RStudio, Posit Cloud, Advantages of R"
+engine: knitr
+---
+
+
+## What is R?
+
+* R is a suite of software facilities for:
+    * Reading and manipulating data
+    * Computation
+    * Conducting statistical data analysis
+    * Application and development of Machine Learning Algorithms
+    * Displaying the results
+* R is the open-source version (i.e. freely available version - no license fee) of the S programming language, a language for manipulating **objects**.
+* Software and packages can be downloaded from [the link for CRAN project](https://cran.r-project.org/ "R Download Page")
+
+```{r, out.width = "80%", fig.asp=.75, echo=FALSE, fig.align= "center", fig.cap="R Console"}
+knitr::include_graphics("figures/R Console.png")
+```
+
+## RStudio
+
+* The R Console by itself is not very interesting and useful. A tool named RStudio is designed to use R more efficient and easily.
+* RStudio can be installed after installing R.
+* RStudio won't work without R. R has to be installed on your computer.
+* You can think RStudio as an upgrade of R, on visual and functionality terms. It doesn't add anything that R cannot do.
+* RStudio can be downloaded from [the website of RStudio](https://rstudio.com/products/rstudio/ "RStudio Download Page")
+
+```{r, out.width = "80%", fig.asp=.75, echo=FALSE, fig.align= "center", fig.cap="RStudio General View"}
+knitr::include_graphics("figures/Rstudio.png")
+```
+
+* RStudio have 4 main parts:
+```{r, out.width = "80%", fig.asp=.75, echo=FALSE, fig.align= "center", fig.cap="RStudio description of windows"}
+knitr::include_graphics("figures/Rstudiosection.png")
+```
+
+## Using R and RStudio from Posit Cloud
+
+* If you are a beginner at R and will only use it for the lecture then you may not want to install it into your computer.
+* A great alternative for this is to use **Posit Cloud**.
+* Posit is the company that is the founder of RStudio and provides a cloud solution for using R and Rstudio.
+
+* First, go to  [the website of Posit](https://posit.cloud "Posit Main Page")
+* Click *Sign Up* at the upper right part of the page
+```{r, out.width = "100%", fig.asp=.95, echo=FALSE, fig.align= "center", fig.cap="Posit Main Page"}
+knitr::include_graphics("figures/posit01.png")
+```
+
+* Then, select the free plan and click *Learn more*.
+* The *Free Plan* gives you 25 hours of computing time per month which should be sufficient for this course. 
+* If you ever think that you are going to exceed the limit you can always download and install R and RStudio to your computer for free.
+
+```{r, out.width = "100%", fig.asp=.95, echo=FALSE, fig.align= "center", fig.cap="Select Posit Free Plan"}
+knitr::include_graphics("figures/posit02.png")
+```
+
+* Click *Sign Up* at the next page.
+```{r, out.width = "100%", fig.asp=.95, echo=FALSE, fig.align= "center", fig.cap="Sign Up Posit Free Plan"}
+knitr::include_graphics("figures/posit03.png")
+```
+
+* Enter your *e-mail*, *a password*, *your name* and *your surname* to register to posit cloud.
+```{r, out.width = "100%", fig.asp=.95, echo=FALSE, fig.align= "center", fig.cap="Register Posit Free Plan"}
+knitr::include_graphics("figures/posit04.png")
+```
+
+* After registering and possibly confirming your mail address, you can login with your e-mail and password.
+* You will encounter the following page when you successfully login to the Posit Cloud.
+* Select *New Project* and *New RStudio Project* from the upper right buttons.
+```{r, out.width = "100%", fig.asp=.95, echo=FALSE, fig.align= "center", fig.cap="Register Posit Free Plan"}
+knitr::include_graphics("figures/posit05.png")
+```
+
+* After a short period of deployment time, a fresh Rstudio will open as in the following picture.
+```{r, out.width = "100%", fig.asp=.95, echo=FALSE, fig.align= "center", fig.cap="Posit Cloud Main Screen"}
+knitr::include_graphics("figures/posit06.png")
+```
+
+* Give a new name to your project and open a R script to work on from the menu *File $\rightarrow$ New File $\rightarrow$ R Script*.
+```{r, out.width = "100%", fig.asp=.95, echo=FALSE, fig.align= "center", fig.cap="RStudio Main Screen"}
+knitr::include_graphics("figures/posit07.png")
+```
+
+* Now you can start to use RStudio in cloud and make your computations.
+```{r, out.width = "100%", fig.asp=.95, echo=FALSE, fig.align= "center", fig.cap="RStudio with an Open Script"}
+knitr::include_graphics("figures/posit08.png")
+```
+
+
+## Advantages of R
+
+* **Open Source:**
+    * There is no clear difference between user and developer.
+    * A unique solution for the given problem can be constructed.
+    * You are not limited to pre-defined options by a fixed user interface as is common in proprietary software.
+    * Open source also allows to use the program freely without spending any money.
+
+* **Flexibility:**
+    * Gives access to the source code, allows to modify and improve it according to the needs.
+    * Ability to further developments and capacity increase with tools like RStudio and Shiny.
+    * New packages to solve a certain problem is consistently added to the R repository.
+    * Ability to produce reports in PDF and HTML format.
+
+* **Community:**
+    * R has a lot of material in online platforms, in books and in courses.
+    * A lot of information can be found via Q&A websites, social media networks, and numerous blogs.
+
+

@@ -1,5 +1,5 @@
 ---
-title: Introduction to Statistical Learning
+title: Introduction to Programming with R
 subtitle: Lecture Notes
 # format: live-html
 engine: knitr
@@ -10,5 +10,5 @@ link-external-newwindow: true
 
 ## Preface
 
-* This book is created for accompanying lecture notes for the undergraduate course `Introduction to R Programming`.
+* This book is created for accompanying lecture notes for the undergraduate course `IST3110 - Statistical Programming with R`.
 * The motivation behind this book is to provide a comprehensive and easy to understand lecture notes in a tidy way.

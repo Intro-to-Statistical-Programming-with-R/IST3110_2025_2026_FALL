@@ -8,7 +8,7 @@
 
 format:
   live-revealjs:
-    footer: "Intro. to Comp. Stat"
+    footer: "Intro. to R"
     logo: ../../figures/intro to r logo black.png
     theme: [default, styles.scss]
     chalkboard: true
@@ -27,15 +27,6 @@ filters:
   - reveal-header
 link-external-icon: true
 link-external-newwindow: true
-
-pyodide:
-  packages:
-    - numpy
-    # - scipy=1.11.1;
-    - micropip
-    # - https://cdn.jsdelivr.net/gh/ErhanCene/IST3110_SUPPLAMENTARY@main/islp-0.4.0-py3-none-any.whl
-    # - https://github.com/ErhanCene/IST3110_SUPPLAMENTARY/blob/main/islp-0.4.0-py3-none-any.whl
-
 ---
 
 {{< include ../../_extensions/live/_knitr.qmd >}}

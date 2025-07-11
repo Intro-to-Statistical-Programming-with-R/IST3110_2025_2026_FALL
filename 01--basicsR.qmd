@@ -1,0 +1,181 @@
+---
+title: "Basics of R Programming Language"
+format: live-html
+engine: knitr
+---
+
+{{< include ./_extensions/live/_knitr.qmd >}}
+{{< include ./_extensions/live/_gradethis.qmd >}}
+
+
+## Writing Your First Script
+
+* You can either write a code directly into the console or you can use a script.
+* Using a script is more efficient. Because it is easier to write modify and save a R Code in a script.
+* Open a script with **File $\rightarrow$ New File $\rightarrow$ R Script** or you can use shortcut **Ctrl + Shift + N**
+
+## Objects
+
+* R works by creating **objects** and using various functions calls that **create** and **use** these objects. For example;
+    * Vectors of numbers, logical values (TRUE and FALSE), character strings and even complex numbers.
+    * Matrices and general n-way arrays
+    * Lists - arbitrary collections of objects of any type; e.g. list of vectors, list of matrices, etc.
+    * Data frames - a general data set type
+    * functions (yes even functions are objects)
+
+## Defining Variables in R
+
+* You can either use a `=` or `<-` operators to define a variable in R. Though both of them are fine, `<-` is a more common approach while using R.
+
+
+### Exercise 1
+
+:::: {.panel-tabset}
+
+#### Exercise 1 Question
+
+* Create a variable `x` and assign value `5`.
+* Create another variable `y` and assign value `8`.
+* Create a third variable `z` and assign sum of `x` and `y`.
+* Finally print the value `z` to the console.
+
+```{webr}
+#| exercise: ex_1
+x = ______
+y <- ______
+______
+______
+```
+
+
+#### Solution to Exercise 1
+
+::: { .solution exercise="ex_1" }
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+x = 5
+y <- 8
+z <- x+y
+z
+```
+
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+gradethis::grade_result(
+  fail_if(~ !exists("x"), "You forgot to define `x`."),
+  fail_if(~ get("x") != 5, "`x` must be 5."),
+  fail_if(~ !exists("y"), "You forgot to define `y`."),
+  fail_if(~ get("y") != 8, "`y` must be 8."),
+  fail_if(~ !exists("z"), "You forgot to define `z`."),
+  fail_if(~ z != x + y, "`z` must be calculated as `x + y`, not hardcoded."),
+  # fail_if(~ {
+  #   exprs <- try(parse(text = .user_code), silent = TRUE)
+  #   if (inherits(exprs, "try-error")) return(TRUE)
+  # 
+  #   last_expr <- tail(exprs, 1)[[1]]
+  #   !(
+  #     (is.symbol(last_expr) && as.character(last_expr) == "z") ||
+  #     (is.call(last_expr) &&
+  #      as.character(last_expr[[1]]) == "print" &&
+  #      as.character(last_expr[[2]]) == "z")
+  #   )
+  # }, "Your last line must be `z` or `print(z)` to display the result."),
+  fail_if(~ .result != 13, "The final output must be 13."),
+  pass_if(~ .result == 13, "Great job!")
+)
+```
+
+
+::::
+
+
+### Exercise 2
+
+:::: {.panel-tabset}
+
+#### Exercise 2 Question
+
+* Create a variable `x` and assign value `5`.
+* Create another variable `y` and assign value `8`.
+* Create a third variable `z` and assign sum of `x` and `y`.
+* Finally print the value `z` to the console.
+
+```{webr}
+#| exercise: ex_2
+x = ______
+y <- ______
+______
+______
+```
+
+
+#### Solution to Exercise 2
+
+::: { .solution exercise="ex_2" }
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+x = 5
+y <- 8
+z <- x+y
+z
+```
+
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+gradethis::grade_code()
+```
+
+
+::::
+
+
+
+
+::: {#nte-01 .callout-note collapse=true}
+
+## Using print vs not using print
+
+You do not have to wrap an object with `print()` function in R. Both `z` and `print(z)` would give the same output in R.<br>
+One case that you would prefer to use `print()` function is inside the loops (`for()`, `if()`, `while()` etc.). <br>
+Without a `print()` function the objects inside a loop won't be printed at the console.
+:::
+
+
+## Basic Math in R
+
+```{pyodide}
+# | exercise: ex_1_py
+n = range(1, 11)
+______
+```
+
+
+<!-- ::: { .solution exercise="ex_1_py" } -->
+
+
+<!-- ::: -->
+
+```{pyodide}
+#| exercise: ex_1_py
+#| check: true
+n = range(1, 11)
+mean = sum(n)/len(n)
+feedback = None
+if (result == mean):
+  feedback = { "correct": True, "message": "Nice work!" }
+else:
+  feedback = { "correct": False, "message": "That's incorrect, sorry." }
+feedback
+```
+
+

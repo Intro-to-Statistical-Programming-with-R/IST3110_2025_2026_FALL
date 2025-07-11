@@ -1,0 +1,66 @@
+---
+title: "Syllabus"
+subtitle: "Weekly Lecture Plan, Evaluation of the Class and Materials"
+engine: knitr
+---
+
+## Weekly Draft Course Plan
+
+Draft means that dates and contents may change based on the conditions. 
+
+
+
+| Week | Date                     | Content                                                                             |
+|------|--------------------------|-------------------------------------------------------------------------------------|
+| 1    | 17 February 2025 Monday  | Preface, General Info, Installing R and RStudio, Basic Calculations,<br> Data Types in R: Vectors, Factors, Matrix, Data Frames, Lists. <br> Importing data <br> <span style="color: blue;">Lab Session 1  </span> |
+| 2    | 24 February 2025 Monday  | Control Statements, Data Cleaning, Handling Missing Values <br> <span style="color: blue;">Lab Session 2  </span> |
+| 3    | 03 March 2025 Monday     | Exploratory Data Analysis and Data Visualization: ggplot                    |
+| 4    | 10 March 2025 Monday     | Data Manipulation with dplyr <br>                                                               |
+| 5    | 17 March 2025 Monday     | <span style="color: blue;">Lab Session 3: babynames </span>                                     |
+| 6    | 24 March 2025 Monday     | Hypothesis testing and Inferential Statistics: Rstatix <br> Visualisation with ggpubr <br>  <span style="color: blue;">Lab Session 4: Hypothesis Tests and Inferential Statistics</span>           |
+| 7    | 31 March 2025 Monday     | <span style="color: purple;">RAMADAN HOLIDAY (NO LECTURE) </span>                                    |
+| 8    | 07 April 2025 Monday     | <span style="color: red;">Midterm  1</span>                               |
+| 9    | 14 April 2025 Monday     | Introduction to Statistical Learning, CARET package <br> Splitting the data into train and test datasets |
+| 10   | 21 April 2025 Monday       | Supervised Learning 1: Classification                  |
+| 11   | 28 April 2025 Monday       | Supervised Learning 2: Regression                                                    |
+| 12   | 05 May 2025 Monday       | <span style="color: blue;">Lab Session 5: Supervised Learning </span>                                  |
+| 13   | 12 May 2025 Monday       | <span style="color: red;"> Midterm 2</span>               |
+| 14   | 19 May 2025 Monday      | <span style="color: purple;">Commemoration of Atatürk, Youth and Sports Day (NO LECTURE) </span>                 |
+| 15   | 26 May 2025 Monday      | Unsupervised Learning: Cluster Analysis, Principle Component Analysis (PCA) <br> <span style="color: blue;">Lab Session 6: Unsupervised Learning </span>                |
+
+## Evaluation of the class 
+
+* There will be two midterms (60%).
+* One final exam (40%).
+* Midterm and final exams will be conducted on paper with multiple choice questions.
+* The midterm 1 **possibly** will take place on <span style="color: red;"> Week 8 - 07-11 April 2025 </span> and the midterm 2 **possibly** will take place on <span style="color: red;"> Week 13 - 12-16 May 2025 </span>.
+
+
+## Materials
+
+* IST3110 Lecture notes, Cene, E. (This webpage)
+* R for Data Science, Garrett Grolemund, Hadley Wickham [For the free book please click](https://r4ds.hadley.nz/ "R for Data Science")
+* R Programming for Data Science, Roger D. Peng,  [For the free book please click](https://bookdown.org/rdpeng/rprogdatascience/ "R Programming for Data Science")
+* Practical Data Science with R, Nina Zumel
+* Data Manipulation with R, Phil Spector
+* Efficient R programming, Colin Gillespie [For the free book please click](https://bookdown.org/csgillespie/efficientR/ "Efficient R Programming")
+* Exploratory Data Analysis with R, Roger D. Peng [For the free book please click](https://bookdown.org/rdpeng/exdata/ "Exploratory Data Analysis with R")
+* R Graphics Cookbook, Winston Chang [For the free book please click](https://r-graphics.org/)
+* ggplot2: Elegant Graphics for Data Analysis (3e), Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.  [For the free book please click](https://ggplot2-book.org/ "ggplot2: Elegant Graphics for Data Analysis")
+* Tidy Modeling with R, Max Kuhn and Julia Silge [For the free book please click](https://www.tmwr.org/ "Tidy Modeling with R")
+* Hands-On Programming with R, Garrett Grolemund [For the free book please click](https://rstudio-education.github.io/hopr/)
+* Advanced R, Hadley Wickham  [For the free book please click](https://adv-r.hadley.nz/ "Advanced R")
+* Introduction to Statistical Learning with Applications in R, Gareth James [For the free book please click](https://www.statlearning.com/ "Introduction to Statistical Learning with Applications in R")
+
+## Some useful websites to get help
+
+Typically, a problem you may be encountering is not new and others have faced,
+solved, and documented the same issue online.
+
+* The following resources can be used to search for online help. Although, I typically just google the problem and find answers relatively quickly.
+* **RSiteSearch("key phrase"):** searches for the key phrase in help manuals and archived mailing lists on the R Project website at http://search.r-project.org/.
+* **Stack Overflow:** a searchable Q&A site oriented toward programming issues. 75 % of my answers typically come from Stack Overflow questions tagged for R at http://stackoverflow.com/questions/tagged/r.
+* **Cross Validated:** a searchable Q&A site oriented toward statistical analysis. Many questions regarding specific statistical functions in R are tagged for R at http://stats.stackexchange.com/questions/tagged/r.
+* **R--seek:** a Google custom search that is focused on R-specific websites. Located at http://rseek.org/
+* **R -bloggers:** a central hub of content collected from over 500 bloggers who provide news and tutorials about R. Located at http://www.r-bloggers.com/
+* **ChatGPT** obviously.

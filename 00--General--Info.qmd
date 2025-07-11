@@ -1,0 +1,63 @@
+---
+title: "General Info"
+subtitle: "General info for IST3110 - 2024-2025 Spring"
+engine: knitr
+---
+
+## What is the prequisite for this course
+
+* Analytical thinking and ability to solve problems.
+* Interest in statistical programming.
+* Having time to investigate and curiosity.
+
+## Which programs you should download and install
+* R programming language (required) ([the link for CRAN project](https://cran.r-project.org/ "R Download Page")).
+* RStudio (Not required but strongly recommended) ([the website of RStudio](https://rstudio.com/products/rstudio/ "RStudio Download Page"))
+
+
+## What this course will cover
+
+This course mainly divided into four parts.
+
+* Introduction to R.
+* Data wrangling with R.
+* Data visualization with R.
+* Hypothesis testing with R.
+* Introduction to Machine Learning with R.
+
+## What you will learn after each section
+
+* After the `Introduction to R` section you will learn:
+  - How to work with different Data Types in R.
+  - How to import and export data in different formats.
+  - How to deal with dates.
+  - How to develop your own functions and use loop control structures to reduce code redundancy.
+* In this part you will mostly use:
+  - Base R functions
+  - `readr`, `write_xl` for importing and exporting data.
+  - `lubridate` package for dealing with dates.
+* After the `Data wrangling with R` section you will learn
+  - How to use **pipe operators** to simplify your code and make it more readable.
+  - How to reshape the layout of your data, and manipulate, summarize, and join data sets.
+* In this part you will mostly use:
+  - `dplyr`
+  - `tidyr`
+* After the `Data visualization with R` section you will learn
+  - Which graphical methods is suitable for your data.
+  - How to prepare and transform the data for visualization.
+  - How to make visualizations with ggplot.
+  - How to integrate pipe operator with ggplot.
+* In this part you will mostly use:
+  - base r functions for visualizations
+  - `ggplot`
+* After the `Hypothesis testing with R` section you will learn
+  - How to make basic statistical hypothesis testing with R.
+* In this part you will mostly use:
+  - `rstatix`
+* After the `Introduction to Machine Learning with R` section you will learn.
+  - What is machine learning?
+  - What is train and test data?
+  - What are the types of machine learning?
+  - How to implement classification algorithms, regression algorithms and principle component analysis in R.
+* In this part you will mostly use:
+  - `caret`

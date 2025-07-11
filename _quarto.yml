@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Introduction to R Programming Lecture Notes"
-  favicon: figures/EC favicon black transparent comp stat.png
+  favicon: figures/intro to r logo black.png
   description: "Accompanying webpage with interactive codes and lecture notes for IST3110."
   repo-url: https://github.com/Intro-to-Statistical-Programming-with-R
   repo-actions: [edit, issue]
@@ -21,13 +21,15 @@ website:
   sidebar:
     style: 'docked'
     contents:
-      - href: index.qmd
-        text: Preface
-      - section: Exercises and Grading
-        contents:
-          - grading.qmd
-      - section: Lab Sessions
+      - section: Before Starting - Week 0
         contents: 
+        - index.qmd
+        - 00--General--Info.qmd
+        - 00--Installing--R--and--RStudio.qmd
+        - 00--Syllabus.qmd
+      - section: Week 01 - Introduction to R
+        contents: 
+          - 01--basicsR.qmd
           - LabSession01Main.qmd
   page-footer:
     background: light # or `dark`
