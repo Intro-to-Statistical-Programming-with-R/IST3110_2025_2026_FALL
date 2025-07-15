@@ -1,0 +1,26 @@
+---
+title: Week 01 -- Basics of R
+subtitle: Creating Objects and Basic Operations
+# format: live-html
+engine: knitr
+# webr:
+#   packages:
+#     - dplyr
+toc: true
+link-external-icon: true
+link-external-newwindow: true
+---
+
+You can switch to full screen mode by pressing {{< kbd f >}}.
+
+<div style= 'border: 1px solid #3f83e0;'>
+
+```{=html}
+<iframe src="LectureNotes/Week01/"
+  width="100%"
+  height="600"
+  frameborder="0">
+  </iframe>
+```
+
+</div>

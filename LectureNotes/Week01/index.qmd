@@ -1,0 +1,1329 @@
+---
+format:
+  live-revealjs:
+    footer: "Intro. to R"
+    logo: ../../figures/intro to r logo black.png
+    theme: [default, styles.scss]
+    chalkboard: true
+    scrollable: true
+    controls: true
+    slide-number: c/t
+    progress: true
+    smaller: true
+    touch: true
+    keyboard: true
+    mouse-wheel: true
+    code-link: true
+    header: Week 1 - Basics of R
+    header-logo: ../../figures/yildiz-teknik-universitesi-logo-en.png
+filters: 
+  - reveal-header
+  - fold_results.lua
+link-external-icon: true
+link-external-newwindow: true
+---
+
+<!-- {{< include ../../_extensions/live/_knitr.qmd >}} -->
+<!-- {{< include ../../_extensions/live/_gradethis.qmd >}} -->
+
+
+## {#title-slide data-menu-title="Title Slide" background="white"} 
+
+[Introduction to Programming with R]{.custom-title}
+
+[Basics of R]{.custom-subtitle}
+
+<hr class="hr-green">
+
+[Erhan Cene]{.custom-subtitle2}
+[ecene@yildiz.edu.tr]{.custom-subtitle2}
+[*Yildiz Technical University, Department of Statistics*]{.custom-subtitle3}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[**Published:** Oct 10, 2022]{.body-text-s}
+:::
+
+::: {.column width="50%"}
+[**Last updated:** `r format(Sys.time(), '%b %d, %Y')`]{.body-text-s}
+:::
+
+::::
+
+
+## Basics of R Programming Language
+
+* You can either write a code directly into the console or you can use a script.
+* Using a script is more efficient. Because it is easier to write modify and save a R Code in a script.
+* Open a script with `File -> New File -> R Script` or you can use shortcut `Ctrl + Shift + N`
+
+
+## Objects
+
+* R works by creating **objects** and using various functions calls that **create** and **use** these objects. For example;
+    * **Vectors of numbers**, **logical values** (`TRUE` and `FALSE`), **character strings** and even complex numbers.
+    * **Matrices** and general n-way **arrays**
+    * **Lists** - arbitrary collections of objects of any type; e.g. list of vectors, list of matrices, etc.
+    * **Data frames** - a general data set type
+    * **functions** (yes even functions are objects)
+
+## Defining Variables in R
+
+
+* An object in R can be defined with `<-` or `=` sign.
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+x = 5
+y <- 8
+z <- x+y
+z
+```
+
+
+## R is **case sensitive** !!!
+
+* This means object `S` and object `s` are different elements.
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+#| error: true
+S <- 'some string'
+s
+```
+
+* If you call an object that is not defined in your environment you will get an error like above.
+
+
+## Basic Math in R (1)
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+43 + 35 # addition
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+43 - 35 # subtraction
+```
+
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+12 * 8 # multiplication
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+100 / 8 # division
+```
+
+## Basic Math in R (2)
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+2^4 # power
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+100 %% 8 # remainder
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+100 %/% 8 # divident
+```
+
+## Vectorization (1)
+
+* A key difference between R and many other languages is a topic known as vectorization.
+* In many other languages many functions are to be applied individually to each element in a vector of numbers which requires a loop function like `for()` or `while()`.
+* But in R, many cases you don't have to define loops although you can use them normally.
+
+* In R, one dimensional arrays are defined with the function `c()` which is the shorthand for **combine**.
+
+* Three vectors, `x`, `y` and `z` are already defined for you.
+
+```{r}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+x <- c(1, 3, 4)
+y <- c(1, 2, 4)
+
+# empty vector
+z <- as.vector(NULL)
+```
+
+
+## Vectorization (2)
+
+
+* Look at the outputs of each one.
+
+```{r, attr.output='.details summary="Inspect The Output"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+x
+```
+
+
+```{r, attr.output='.details summary="Inspect The Output"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+y
+```
+
+
+```{r, attr.output='.details summary="Inspect The Output"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+z
+```
+
+## Vectorization (3)
+
+* In other languages you might have to run a loop to add two vectors together.
+* A `for()` loop may be required to iterate over every elements of vectors.
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+# empty vector
+z <- as.vector(NULL)
+# for loop to add corresponding elements in each vector
+for (i in seq_along(x)) {
+z[i] <- x[i] + y[i]
+print(z)
+}
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+z
+```
+
+## Vectorization (4)
+
+
+* Instead, in R, `+` is a vectorized function which can operate on entire vectors at once.
+* So rather than creating `for` loops for many functions, you can just use simple syntax :
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+x + y
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+x * y
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+x > y
+```
+
+## Vectorization (5) - Recycling
+
+
+* When performing vector operations in R , it is important to know about `recycling`.
+* When performing an operation on two or more vectors of unequal length, R will
+recycle elements of the shorter vector(s) to match the longest vector. 
+
+
+For example:
+
+```{webr}
+#| warning: true
+#| echo: true
+#| code-line-numbers: true
+long <- 1:10
+short <- 1:5
+```
+
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+long
+```
+
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+short
+```
+
+## Vectorization (6) - Recycling
+
+
+* Try to guess the output before hitting the `Run Code` button.
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+long + short
+```
+
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+long <- 1:10
+c <- 3
+```
+
+* Also try to guess this one too.
+
+```{webr}
+#| warning: true
+#| echo: true
+#| code-line-numbers: true
+long * c
+```
+
+* Note that R does not warn you if the length of the longer object is multiple of the length of the shorter object.
+
+## Vectorization (7) - Recycling
+
+* What happens if the length of the longer object **is not** multiple of the length of the shorter object.
+
+```{webr}
+#| warning: true
+#| echo: true
+#| code-line-numbers: true
+even_length <- 1:10
+odd_length <- 1:3
+even_length + odd_length
+```
+
+
+## Functions (1)
+
+* Functions are special commands that are designed for a particular purpose.
+* For example `sum()` gives the sum of a numerical values, `sqrt()` takes root of a number etc..
+* Functions are always followed by a `()`. Inside the `()` most of the functions take some special values called **arguments**.
+
+## Functions (2) - sqrt()
+
+* Lets look at the `help` page for the `sqrt()` function.
+
+```{webr}
+#| warning: true
+#| echo: true
+#| code-line-numbers: true
+?sqrt
+```
+
+* `sqrt()` function only takes one argument `x` which is either a single number, or arrays of numbers.
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+sqrt(8)
+```
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+sqrt(c(1,4,9,16,25))
+```
+
+## Functions (3) - sum()
+
+* Lets look at the `help` page for the `sum()` function.
+
+```{webr}
+#| warning: true
+#| echo: true
+#| code-line-numbers: true
+?sum
+```
+
+* According to the help file the usage of function is `sum(..., na.rm = FALSE)`
+* `sum()` function takes two arguments.
+    * `...` numeric or complex or logical vectors.
+    * `na.rm`	logical. Should missing values (including NaN) be removed?
+* The second argument `na.rm` has a default value of `FALSE`. A default value means that if you don't specify a value, it will take the default value, here `FALSE`.
+
+## Functions (4) - sum()
+
+
+```{r}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+x <- c(6, 8, 10, 12, 14)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+sum(x)
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+sum(x, na.rm = FALSE)
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+sum(x, na.rm = TRUE)
+```
+
+## Functions (5) - sum()
+
+```{r}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+y<- c(6, 8, 10, 12, NA)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+sum(y)
+```
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+sum(y, na.rm = FALSE)
+```
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+sum(y, na.rm = TRUE)
+```
+
+## Functions (6) - sum() on logical vectors
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+z <- c(T, T, F, F, F, T, T)
+sum(z)
+```
+
+## Packages (1)
+
+* Some functions are not contained locally in R. They are called `packages` and they should be installed when needed.
+* R contains one or more libraries of packages. A package contain various `functions` and `data sets` for numerous purposes, e.g. `e1071` package, `spatstat` package and `DandEFA` package, etc.
+* Some packages are a part of the R. Others should be downloaded from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/).
+* You can download and install a package with the `install.packages()` function. This installation is only one time process. 
+* To access all of the functions and data sets of a particular package; it must be loaded to the workspace with the `library()` function.
+
+## Packages (2)
+
+* Now let's install `DandEFA` package.
+* Use the function `install.packages()` and wrap the package name with the quotes.
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+install.packages('DandEFA') # Do not forget quotes in install.packages
+```
+
+* Afterwards, we should call the package with the `library()` function.
+* This time, we do not have to use the quotes.
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+library(DandEFA)
+```
+
+## Packages (3)
+
+
+* You can also use Rstudio to download multiple packages easily and at once.
+* Use the `Tools -> Install Packages` menu for installing packages.
+
+```{r, out.width = "100%", fig.asp=1, echo=FALSE, fig.align= "center", fig.cap="Install Packages with RStudio"}
+knitr::include_graphics("./figures/package_download.png")
+```
+
+## An Example for Packages: DandEFA Package (1)
+
+* Using packages to utilize various methods and algorithms.
+* **DandEFA** package contains functions for a particular analysis called **factor analysis**.
+* Factor Analysis is a method for categorize variables into groups to find the relationship between the variables in the same group.
+* The package contains functions:
+    * **factload**: A method for producing the factor loadings
+    * **dandelion**: A method for visualizing the factor loadings
+
+````{markdown}
+help(package="DandEFA")
+````
+
+## An Example for Packages: DandEFA Package (2)
+
+
+```{r, out.width = "75%", fig.asp=0.80, echo=FALSE, fig.align= "center", fig.cap="Getting help with RStudio for a package with code"}
+knitr::include_graphics("./figures/help_package.png")
+```
+
+
+## An Example for Packages: DandEFA Package (3)
+
+* Alternatively you can also use the bottom-right panel in RStudio to get info on a specific function:
+
+```{r, out.width = "75%", fig.asp=0.80, echo=FALSE, fig.align= "center", fig.cap="Getting help with RStudio from the menu"}
+knitr::include_graphics("./figures/help_R.png")
+```
+
+
+## An Example for Packages: DandEFA Package (4)
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+library(DandEFA) # loading the package
+data(timss2011) # loading the dataset
+timss2011 <- na.omit(timss2011) # removing the rows with missing values
+dandpal <- rev(rainbow(100, start = 0, end = 0.2)) # Choose colors for visualisation
+facl <- factload(timss2011,nfac=5,method="prax",cormeth="spearman") # Find the factor loadings
+facl # Show the factor loadings
+dandelion(facl,bound=0,mcex=c(1,1.2),palet=dandpal) # Visualise
+```
+
+* In summary, packages provide a flexible environment.
+* Employing multiple methods and algorithms in the same time
+* Programming and using packages are two core elements in R.
+
+## Working Directory (1)
+
+* In order to work in R, you should specify a active working directory. In brief this is the location where R will get and save the files.
+* You can call the active working directory with the command `getwd()`
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+# returns path for the current working directory
+getwd()
+```
+
+* You can change your active working directory either by using `setwd()` function or by using `Session -> Set Working Directory -> To Source File Location` after saving a script.
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+# set the working directory to a specified directory
+setwd("/home")
+```
+
+## Working Directory (2)
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+# returns path for the current working directory
+getwd()
+```
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+setwd("/home/web_user")
+```
+
+```{webr}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+# returns path for the current working directory
+getwd()
+```
+
+
+## Listing and removing objects (1)
+
+* `ls()` lists all the objects currently contained in directory.
+* `exists()` checks whether an element is defined.
+* `rm()` removes objects from the directory.
+* You can remove everything in your directory with the command `rm(list = ls())`
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- 3
+y <- 5
+z <- 4
+t <- 9
+r <- 15
+```
+
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+## Listing and removing objects (2)
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+exists("y")
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+exists("w")
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+rm(y)
+```
+
+
+## Listing and removing objects (3)
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+rm(x,z)
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+
+## Listing and removing objects (4)
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+rm(x,z)
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+exists("y")
+```
+
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+## Listing and removing objects (5)
+
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+rm(list = ls())
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+## Listing and removing objects (6)
+
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- 3
+y <- 5
+z <- 4
+t <- 9
+r <- 15
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+rm(list = setdiff(ls(), 't'))
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+## Saving and Loading Objects for Future Use (1)
+
+* You can also save and load your workspaces.
+* Saving your workspace will save all R files and objects within your workspace to a `.RData` file in your working directory.
+* Loading your workspace will load any `.RData` files in your working directory.
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- 3
+y <- x^2
+z <- c(x+y,x-y)
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# save all items in workspace to a .RData file
+save.image(file = 'output.RData')
+```
+
+
+## Saving and Loading Objects for Future Use (2)
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# save all items in workspace to a .RData file
+dir()
+```
+
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# save all items in workspace to a .RData file
+ls()
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# save specified objects to a .RData file
+save(x, z, file = "onlyxz.RData")
+```
+
+## Saving and Loading Objects for Future Use (3)
+
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# save specified objects to a .RData file
+dir()
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# save all items in workspace to a .RData file
+ls()
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+rm(list = ls())
+```
+
+## Saving and Loading Objects for Future Use (4)
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# load workspace into current session
+load("onlyxz.RData")
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+## Saving and Loading Objects for Future Use (5)
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+rm(list = ls())
+```
+
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# load workspace into current session
+load("output.RData")
+```
+
+```{webr}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+ls()
+```
+
+
+## Working with Different Types of Data in R
+
+R classifies all the different data types into five classes.
+
+* integer
+* numeric
+* character
+* complex
+* logical
+
+
+## Generating Regular Sequences (1)
+
+* To specify consecutive sequence with integers between two numbers `:` operator is used.
+* Alternatively the function `c()` can be used.
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# create a vector of integers between 1 and 10
+1:10
+```
+
+## Generating Regular Sequences (2)
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# create a vector consisting of 1, 5, and 10
+c(1, 5, 10)
+```
+
+
+## Generating Regular Sequences (3)
+
+* A generalization of `:` is the `seq()` function.
+* `seq()` takes 3 arguments.
+    * `from` states the start point,
+    * `to` states the end point.
+    * As a third argument either `by` or `length.out` is used.
+        * `by` is used to specify the increment value, `length.out` is used to determine number of points.
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# generate a sequence of numbers from 1 to 21 by increments of 2
+seq(from = 1, to = 21, by = 2)
+```
+
+## Generating Regular Sequences (4)
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# generate a sequence of numbers from 1 to 21 that has 15 equal
+# incremented numbers
+seq(0, 21, length.out = 15)
+```
+
+## Generating Regular Sequences (5)
+
+* The `rep()` function allows to repeat specified constants into long vectors.
+* `rep()` function takes two arguments:
+    * First argument is a number or numeric vector which indicates the numbers to be replicated.
+    * Second argument is either `times` or `each` which is either a number or a numeric vector.
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# replicates the values in x a specified number of times
+rep(1:4, times = 2)
+```
+
+## Generating Regular Sequences (6)
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# replicates the values in x in a collated fashion
+rep(1:4, each = 2)
+```
+
+
+
+## Comparison Operators in R with Numeric Values (1)
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+5 < 8
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+2 + 2 == 5
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+T == TRUE
+```
+
+## Comparison Operators in R with Numeric Values (2)
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+3 * 3 == 9
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+3 * 3 != 8
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+3 * 3 != 9
+```
+
+## Comparison Operators in R with Numeric Values (3)
+
+* Also we can use objects to make comparisons,
+
+```{r}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- 9
+y <- 10
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x == y
+```
+
+## Comparison Operators in R with Numeric Values (4)
+
+* In addition we can compare multiple elements in a vector,
+
+```{r}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- c(1, 4, 9, 12)
+y <- c(4, 4, 9, 13)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x == y
+```
+
+## Comparison Operators in R with Numeric Values (5)
+
+
+* Note that logical values `TRUE` and `FALSE` equate to `1` and `0` respectively. So,
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# How many pairwise equal values are in vectors x and y
+sum(x == y)
+```
+
+* If you need to identify the location of pairwise equalities in two vectors you can wrap the operation in the `which()` function:
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+which(x == y)
+```
+
+## Exact Equality (1)
+
+* To test if two objects are exactly equal:
+
+```{r}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- c(4, 4, 9, 12)
+y <- c(4, 4, 9, 13)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+identical(x, y)
+```
+
+## Exact Equality (2)
+
+
+```{r}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- c(4, 4, 9, 12)
+y <- c(4, 4, 9, 12)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+identical(x, y)
+```
+
+## Floating Point Comparison (1)
+
+* Sometimes you wish to test for "near equality". The `all.equal()` function
+allows you to test for equality with a difference tolerance of `1.5e-8`.
+
+```{r}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- c(4.00000005, 4.00000008)
+y <- c(4.00000002, 4.00000006)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+all.equal(x, y)
+```
+
+## Floating Point Comparison (2)
+
+* If the difference is greater than the tolerance level the function will return the mean relative difference:
+
+```{r}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- c(4.005, 4.0008)
+y <- c(4.002, 4.0006)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+all.equal(x, y)
+```
+
+## Floating Point Comparison (3)
+
+* You can also change the amount of tolerance with the `tolerance()` argument.
+
+```{r}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- c(4.003, 4.000)
+y <- c(4.002, 3.999)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+all.equal(x, y, tolerance = 1e-4)
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+all.equal(x, y, tolerance = 1e-1)
+```
+
+## Rounding Numbers (1)
+
+* There are many ways of rounding to the nearest integer , up, down, or toward a specified decimal place.
+
+```{r}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+x <- c(1, 1.35, 1.7, 2.05, 2.4, 2.75, 3.1, 3.45, 3.8, 
+       4.15, 4.5, 4.85, 5.2, 5.55, 5.9)
+```
+
+<br>
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# Round to the nearest integer
+round(x)
+```
+
+## Comparison Operators in R with Numeric Values (2)
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# Round up
+ceiling(x)
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# Round down
+floor(x)
+```
+
+
+```{r, attr.output='.details summary="Guess The Output?"'}
+#| warning: false
+#| error: true
+#| echo: true
+#| code-line-numbers: true
+# Round to a specified decimal
+round(x, digits = 1)
+```
+

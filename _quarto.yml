@@ -34,6 +34,7 @@ website:
       - section: Week 01 - Introduction to R
         contents: 
           - 01--01--basicsR.qmd
+          - 01--01--Data--Types--Main.qmd
           - LabSession01Main.qmd
   page-footer:
     background: light # or `dark`

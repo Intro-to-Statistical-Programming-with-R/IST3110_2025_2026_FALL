@@ -1,6 +1,8 @@
 ---
 title: "How to use this webpage?"
 # subtitle: "Weekly Lecture Plan, Evaluation of the Class and Materials"
+filters: 
+  - quizdown
 format: 
   live-html:
     css: webex.css
@@ -77,4 +79,105 @@ exm <- list(
 ```{r quiz, echo = FALSE, message = FALSE, results = "asis"}
 exams2forms(exm, n = 1)
 ```
+
+
+#### Sample Questions 3
+
+```quizdown
+---
+primary_color: orange
+secondary_color: lightgray
+text_color: black
+shuffle_questions: false
+shuffle_answers: true
+---
+
+# Python Lists
+
+What is the value of `x[2]`?
+
+> Python lists are mutable!
+
+~~~python
+x = [2, 3, 4]
+x[2] = 4
+print(x[2])
+~~~
+
+- [ ] 1
+- [ ] 2
+- [ ] 3
+- [x] 4
+
+## The sound of dog
+
+What do dogs sound like?
+
+> Some hint
+
+- [ ] yes
+- [ ] no
+- [ ] `self.sound = "meow"`
+- [x] wuff
+
+## Put the [days](https://en.wikipedia.org/wiki/Day) in order!
+
+> Monday is the *first* day of the week.
+
+1. Monday
+2. Tuesday
+3. Wednesday
+4. Friday
+5. Saturday  
+```
+
+:::: {.panel-tabset}
+
+#### Sample Question 4
+
+
+```{ojs}
+//| echo: false
+rand_int = Math.floor(Math.random() * 10000);
+```
+
+
+Write an R function that takes a single variable `x`
+and returns that value multiplied by ${rand_int}.
+
+```{webr}
+#| exercise: ex_4
+#| input:
+#|   - rand_int
+my_function <- function(x) {
+  ______
+}
+```
+
+
+#### Solution to Sample Question
+
+::: { .solution exercise="ex_4" }
+
+```{webr}
+#| exercise: ex_4
+#| solution: true
+my_function <- function(x) {
+  x * ${rand_int}
+}
+```
+
+:::
+
+```{webr}
+#| exercise: ex_4
+#| check: true
+gradethis::grade_code()
+```
+
+::::
+
+
+
+
 
