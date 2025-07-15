@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R and RStudio – Introduction to R Programming Lecture Notes</title>
+<title>Syllabus – Introduction to R Programming Lecture Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./00--Syllabus.html" rel="next">
-<link href="./00--General--Info.html" rel="prev">
+<link href="./00--04--Evaluation.html" rel="next">
+<link href="./00--02--Installing--R--and--RStudio.html" rel="prev">
 <link href="./figures/intro to r logo black.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-226bd0f977fa82dfae4534cac220d79a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1e83f2d67b155a5d4448b427787236a5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2e698a7febaced1b03de15b382299e0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
@@ -77,35 +77,6 @@ ul.task-list li input[type="checkbox"] {
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -131,7 +102,7 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About the Author!</span></a>
+<span class="menu-text">About the Instructor!</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -144,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Before Starting - Week 0</a></li><li class="breadcrumb-item"><a href="./00--Installing--R--and--RStudio.html">R and RStudio</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Before Starting - Week 0</a></li><li class="breadcrumb-item"><a href="./00--03--Syllabus.html">Syllabus</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -168,25 +139,49 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Programming with R</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00--General--Info.html" class="sidebar-item-text sidebar-link">
+  <a href="./00--01--General--Info.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">General Info</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00--Installing--R--and--RStudio.html" class="sidebar-item-text sidebar-link active">
+  <a href="./00--02--Installing--R--and--RStudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R and RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00--Syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="./00--03--Syllabus.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00--04--Evaluation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Evaluation of the Course</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00--05--Materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Materials</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00--06--Useful--Websites.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful Websites</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00--07--How--to--use--this--Webpage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to use this webpage?</span></a>
   </div>
 </li>
       </ul>
@@ -202,7 +197,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01--basicsR.html" class="sidebar-item-text sidebar-link">
+  <a href="./01--01--basicsR.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basics of R Programming Language</span></a>
   </div>
 </li>
@@ -224,20 +219,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-r" id="toc-what-is-r" class="nav-link active" data-scroll-target="#what-is-r">What is R?</a></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
-  <li><a href="#using-r-and-rstudio-from-posit-cloud" id="toc-using-r-and-rstudio-from-posit-cloud" class="nav-link" data-scroll-target="#using-r-and-rstudio-from-posit-cloud">Using R and RStudio from Posit Cloud</a></li>
-  <li><a href="#advantages-of-r" id="toc-advantages-of-r" class="nav-link" data-scroll-target="#advantages-of-r">Advantages of R</a></li>
+  <li><a href="#weekly-draft-course-plan" id="toc-weekly-draft-course-plan" class="nav-link active" data-scroll-target="#weekly-draft-course-plan">Weekly Draft Course Plan</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Intro-to-Statistical-Programming-with-R/edit/main/docs/00--Installing--R--and--RStudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Intro-to-Statistical-Programming-with-R/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Intro-to-Statistical-Programming-with-R/edit/main/docs/00--03--Syllabus.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Intro-to-Statistical-Programming-with-R/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Before Starting - Week 0</a></li><li class="breadcrumb-item"><a href="./00--Installing--R--and--RStudio.html">R and RStudio</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Before Starting - Week 0</a></li><li class="breadcrumb-item"><a href="./00--03--Syllabus.html">Syllabus</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">R and RStudio</h1>
-<p class="subtitle lead">Installing R and RStudio, Posit Cloud, Advantages of R</p>
+<h1 class="title">Syllabus</h1>
+<p class="subtitle lead">Weekly Lecture Plan</p>
 </div>
 
 
@@ -254,202 +246,100 @@ window.Quarto = {
 </header>
 
 
-<section id="what-is-r" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-r">What is R?</h2>
-<ul>
-<li>R is a suite of software facilities for:
-<ul>
-<li>Reading and manipulating data</li>
-<li>Computation</li>
-<li>Conducting statistical data analysis</li>
-<li>Application and development of Machine Learning Algorithms</li>
-<li>Displaying the results</li>
-</ul></li>
-<li>R is the open-source version (i.e.&nbsp;freely available version - no license fee) of the S programming language, a language for manipulating <strong>objects</strong>.</li>
-<li>Software and packages can be downloaded from <a href="https://cran.r-project.org/" title="R Download Page">the link for CRAN project</a></li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/R Console.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>R Console</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="rstudio">RStudio</h2>
-<ul>
-<li>The R Console by itself is not very interesting and useful. A tool named RStudio is designed to use R more efficient and easily.</li>
-<li>RStudio can be installed after installing R.</li>
-<li>RStudio won’t work without R. R has to be installed on your computer.</li>
-<li>You can think RStudio as an upgrade of R, on visual and functionality terms. It doesn’t add anything that R cannot do.</li>
-<li>RStudio can be downloaded from <a href="https://rstudio.com/products/rstudio/" title="RStudio Download Page">the website of RStudio</a></li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/Rstudio.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>RStudio General View</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>RStudio have 4 main parts:</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/Rstudiosection.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>RStudio description of windows</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="using-r-and-rstudio-from-posit-cloud" class="level2">
-<h2 class="anchored" data-anchor-id="using-r-and-rstudio-from-posit-cloud">Using R and RStudio from Posit Cloud</h2>
-<ul>
-<li><p>If you are a beginner at R and will only use it for the lecture then you may not want to install it into your computer.</p></li>
-<li><p>A great alternative for this is to use <strong>Posit Cloud</strong>.</p></li>
-<li><p>Posit is the company that is the founder of RStudio and provides a cloud solution for using R and Rstudio.</p></li>
-<li><p>First, go to <a href="https://posit.cloud" title="Posit Main Page">the website of Posit</a></p></li>
-<li><p>Click <em>Sign Up</em> at the upper right part of the page</p></li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/posit01.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Posit Main Page</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Then, select the free plan and click <em>Learn more</em>.</li>
-<li>The <em>Free Plan</em> gives you 25 hours of computing time per month which should be sufficient for this course.</li>
-<li>If you ever think that you are going to exceed the limit you can always download and install R and RStudio to your computer for free.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/posit02.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Select Posit Free Plan</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Click <em>Sign Up</em> at the next page.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/posit03.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Sign Up Posit Free Plan</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Enter your <em>e-mail</em>, <em>a password</em>, <em>your name</em> and <em>your surname</em> to register to posit cloud.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/posit04.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Register Posit Free Plan</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>After registering and possibly confirming your mail address, you can login with your e-mail and password.</li>
-<li>You will encounter the following page when you successfully login to the Posit Cloud.</li>
-<li>Select <em>New Project</em> and <em>New RStudio Project</em> from the upper right buttons.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/posit05.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Register Posit Free Plan</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>After a short period of deployment time, a fresh Rstudio will open as in the following picture.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/posit06.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Posit Cloud Main Screen</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Give a new name to your project and open a R script to work on from the menu <em>File <span class="math inline">\(\rightarrow\)</span> New File <span class="math inline">\(\rightarrow\)</span> R Script</em>.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/posit07.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>RStudio Main Screen</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Now you can start to use RStudio in cloud and make your computations.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/posit08.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>RStudio with an Open Script</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="advantages-of-r" class="level2">
-<h2 class="anchored" data-anchor-id="advantages-of-r">Advantages of R</h2>
-<ul>
-<li><strong>Open Source:</strong>
-<ul>
-<li>There is no clear difference between user and developer.</li>
-<li>A unique solution for the given problem can be constructed.</li>
-<li>You are not limited to pre-defined options by a fixed user interface as is common in proprietary software.</li>
-<li>Open source also allows to use the program freely without spending any money.</li>
-</ul></li>
-<li><strong>Flexibility:</strong>
-<ul>
-<li>Gives access to the source code, allows to modify and improve it according to the needs.</li>
-<li>Ability to further developments and capacity increase with tools like RStudio and Shiny.</li>
-<li>New packages to solve a certain problem is consistently added to the R repository.</li>
-<li>Ability to produce reports in PDF and HTML format.</li>
-</ul></li>
-<li><strong>Community:</strong>
-<ul>
-<li>R has a lot of material in online platforms, in books and in courses.</li>
-<li>A lot of information can be found via Q&amp;A websites, social media networks, and numerous blogs.</li>
-</ul></li>
-</ul>
+<section id="weekly-draft-course-plan" class="level2">
+<h2 class="anchored" data-anchor-id="weekly-draft-course-plan">Weekly Draft Course Plan</h2>
+<p>Draft means that dates and contents may change based on the conditions.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 22%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Date</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>17 February 2025 Monday</td>
+<td>Preface, General Info, Installing R and RStudio, Basic Calculations,<br> Data Types in R: Vectors, Factors, Matrix, Data Frames, Lists. <br> Importing data <br> <span style="color: blue;">Lab Session 1 </span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>24 February 2025 Monday</td>
+<td>Control Statements, Data Cleaning, Handling Missing Values <br> <span style="color: blue;">Lab Session 2 </span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>03 March 2025 Monday</td>
+<td>Exploratory Data Analysis and Data Visualization: ggplot</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>10 March 2025 Monday</td>
+<td>Data Manipulation with dplyr <br></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>17 March 2025 Monday</td>
+<td><span style="color: blue;">Lab Session 3: babynames </span></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>24 March 2025 Monday</td>
+<td>Hypothesis testing and Inferential Statistics: Rstatix <br> Visualisation with ggpubr <br> <span style="color: blue;">Lab Session 4: Hypothesis Tests and Inferential Statistics</span></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>31 March 2025 Monday</td>
+<td><span style="color: purple;">RAMADAN HOLIDAY (NO LECTURE) </span></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>07 April 2025 Monday</td>
+<td><span style="color: red;">Midterm 1</span></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>14 April 2025 Monday</td>
+<td>Introduction to Statistical Learning, CARET package <br> Splitting the data into train and test datasets</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>21 April 2025 Monday</td>
+<td>Supervised Learning 1: Classification</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>28 April 2025 Monday</td>
+<td>Supervised Learning 2: Regression</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>05 May 2025 Monday</td>
+<td><span style="color: blue;">Lab Session 5: Supervised Learning </span></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>12 May 2025 Monday</td>
+<td><span style="color: red;"> Midterm 2</span></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>19 May 2025 Monday</td>
+<td><span style="color: purple;">Commemoration of Atatürk, Youth and Sports Day (NO LECTURE) </span></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>26 May 2025 Monday</td>
+<td>Unsupervised Learning: Cluster Analysis, Principle Component Analysis (PCA) <br> <span style="color: blue;">Lab Session 6: Unsupervised Learning </span></td>
+</tr>
+</tbody>
+</table>
 
 
 <script type="ojs-module-contents">
@@ -566,6 +456,13 @@ window._ojs.runtime.interpretFromScriptTags();
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -881,13 +778,13 @@ window._ojs.runtime.interpretFromScriptTags();
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./00--General--Info.html" class="pagination-link" aria-label="General Info">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">General Info</span>
+      <a href="./00--02--Installing--R--and--RStudio.html" class="pagination-link" aria-label="R and RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">R and RStudio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./00--Syllabus.html" class="pagination-link" aria-label="Syllabus">
-        <span class="nav-page-text">Syllabus</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./00--04--Evaluation.html" class="pagination-link" aria-label="Evaluation of the Course">
+        <span class="nav-page-text">Evaluation of the Course</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -899,7 +796,7 @@ window._ojs.runtime.interpretFromScriptTags();
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Intro-to-Statistical-Programming-with-R/edit/main/docs/00--Installing--R--and--RStudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Intro-to-Statistical-Programming-with-R/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Intro-to-Statistical-Programming-with-R/edit/main/docs/00--03--Syllabus.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Intro-to-Statistical-Programming-with-R/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This website is built with <i class="fa-solid fa-heart" title="a heart" aria-label="heart"></i>, <i class="fa-solid fa-droplet" title="a droplet" aria-label="droplet"></i>, <i class="fa-solid fa-face-grin-tears" title="a face with tears" aria-label="face-grin-tears"></i>, <a href="https://github.com/erhancene" target="_blank"><i class="fa-brands fa-github" title="GitHub octocat logo" aria-label="github"></i></a>, <a href="https://www.r-project.org/about.html" target="_blank"><i class="fa-brands fa-r-project" title="R Project" aria-label="r-project"></i></a> and <a href="https://quarto.org/" target="_blank">Quarto</a></p>
 </div>

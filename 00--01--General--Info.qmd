@@ -1,7 +1,9 @@
 ---
 title: "General Info"
-subtitle: "General info for IST3110 - 2024-2025 Spring"
+subtitle: "General info for IST3110 - 2025-2026 Fall"
 engine: knitr
+link-external-icon: true
+link-external-newwindow: true
 ---
 
 ## What is the prequisite for this course

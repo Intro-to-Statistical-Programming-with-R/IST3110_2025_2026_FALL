@@ -2,6 +2,8 @@
 title: "R and RStudio"
 subtitle: "Installing R and RStudio, Posit Cloud, Advantages of R"
 engine: knitr
+link-external-icon: true
+link-external-newwindow: true
 ---
 
 

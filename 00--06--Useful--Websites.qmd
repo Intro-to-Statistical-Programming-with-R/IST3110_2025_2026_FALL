@@ -1,0 +1,18 @@
+---
+title: "Useful Websites"
+# subtitle: "Weekly Lecture Plan, Evaluation of the Class and Materials"
+engine: knitr
+link-external-icon: true
+link-external-newwindow: true
+---
+
+Typically, a problem you may be encountering is not new and others have faced,
+solved, and documented the same issue online.
+
+* The following resources can be used to search for online help. Although, I typically just google the problem and find answers relatively quickly.
+* **RSiteSearch("key phrase"):** searches for the key phrase in help manuals and archived mailing lists on the R Project website at [http://search.r-project.org/](http://search.r-project.org/).
+* **Stack Overflow:** a searchable Q&A site oriented toward programming issues. 75 % of my answers typically come from Stack Overflow questions tagged for R at [stackoverflow](http://stackoverflow.com/questions/tagged/r).
+* **Cross Validated:** a searchable Q&A site oriented toward statistical analysis. Many questions regarding specific statistical functions in R are tagged for R at [crossvalidated](http://stats.stackexchange.com/questions/tagged/r).
+* **R--seek:** a Google custom search that is focused on R-specific websites. Located at [rseek](http://rseek.org/)
+* **R -bloggers:** a central hub of content collected from over 500 bloggers who provide news and tutorials about R. Located at [rbloggers](http://www.r-bloggers.com/).
+* **ChatGPT** obviously [chatgpt](https://chatgpt.com/).

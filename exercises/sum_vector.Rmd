@@ -1,0 +1,30 @@
+```{r data generation, echo = FALSE, results = "hide"}
+
+v1 <- sample(1:10, 5)
+
+```
+
+
+
+
+Question
+========
+Consider the following vector in R:
+$$v1 = `r v1`$$
+What is the output of the following R Code:
+$$sum(v1)$$
+
+
+Solution
+========
+We need to calculate the sum of all the elements in the vector with a help of r function such as `sum()`.
+
+$$`r v1[1]`+`r v1[2]`+`r v1[3]`+`r v1[4]`+`r v1[5]` = `r sum(v1)`$$
+
+
+Meta-information
+================
+extype: num
+exsolution: `r sum(v1)`
+extol: 0.01
+exname: sum of a vector

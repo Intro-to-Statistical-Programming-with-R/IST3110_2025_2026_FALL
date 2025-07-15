@@ -1,0 +1,15 @@
+---
+title: "Evaluation of the Course"
+# subtitle: "Weekly Lecture Plan, Evaluation of the Class and Materials"
+engine: knitr
+link-external-icon: true
+link-external-newwindow: true
+---
+
+* There will be one midterm (25%).
+* Six quizzes (total 25%, with different weights). Quizzes will be conducted on [FEFMOD](https://fefmod.yildiz.edu.tr/). You will need to download [Safe Exam Browser](https://safeexambrowser.org) into your phones to participate the quizzes.
+* One final exam (40%).
+* Midterm and final exams will be conducted on paper with multiple choice questions.
+* The midterm 1 **possibly** will take place on <span style="color: red;"> Week 8 - 07-11 April 2025 </span>.
+
+

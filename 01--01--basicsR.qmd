@@ -2,6 +2,8 @@
 title: "Basics of R Programming Language"
 format: live-html
 engine: knitr
+link-external-icon: true
+link-external-newwindow: true
 ---
 
 {{< include ./_extensions/live/_knitr.qmd >}}
@@ -151,31 +153,21 @@ Without a `print()` function the objects inside a loop won't be printed at the c
 :::
 
 
-## Basic Math in R
 
-```{pyodide}
-# | exercise: ex_1_py
-n = range(1, 11)
-______
-```
+## Exercise 3
 
+```{r}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+#| warning: false
+#| code-fold: true
+#| code-line-numbers: true
 
-<!-- ::: { .solution exercise="ex_1_py" } -->
+library(ggplot2)
 
-
-<!-- ::: -->
-
-```{pyodide}
-#| exercise: ex_1_py
-#| check: true
-n = range(1, 11)
-mean = sum(n)/len(n)
-feedback = None
-if (result == mean):
-  feedback = { "correct": True, "message": "Nice work!" }
-else:
-  feedback = { "correct": False, "message": "That's incorrect, sorry." }
-feedback
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
 ```
 
 

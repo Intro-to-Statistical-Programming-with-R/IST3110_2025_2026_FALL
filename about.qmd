@@ -1,11 +1,12 @@
 ---
-title: About the Author!
+title: About the Instructor!
 # subtitle: Motivation 
 # format: live-html
 engine: knitr
 toc: true
 link-external-icon: true
 link-external-newwindow: true
+
 
 image: ./figures/erhanceneavesis.png
 about: 

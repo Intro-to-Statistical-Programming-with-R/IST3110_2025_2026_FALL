@@ -24,12 +24,16 @@ website:
       - section: Before Starting - Week 0
         contents: 
         - index.qmd
-        - 00--General--Info.qmd
-        - 00--Installing--R--and--RStudio.qmd
-        - 00--Syllabus.qmd
+        - 00--01--General--Info.qmd
+        - 00--02--Installing--R--and--RStudio.qmd
+        - 00--03--Syllabus.qmd
+        - 00--04--Evaluation.qmd
+        - 00--05--Materials.qmd
+        - 00--06--Useful--Websites.qmd
+        - 00--07--How--to--use--this--Webpage.qmd
       - section: Week 01 - Introduction to R
         contents: 
-          - 01--basicsR.qmd
+          - 01--01--basicsR.qmd
           - LabSession01Main.qmd
   page-footer:
     background: light # or `dark`

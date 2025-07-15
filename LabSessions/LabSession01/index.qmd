@@ -92,3 +92,29 @@ link-external-newwindow: true
   * Access to  `Jupyter`, a very popular `Python` interface that runs code through a file called a *notebook*. 
 
 
+## Exercise 3
+
+```{r}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
+## Exercise 4
+
+```{r}
+#| warning: false
+#| echo: true
+#| code-line-numbers: true
+
+2+2
+
+```

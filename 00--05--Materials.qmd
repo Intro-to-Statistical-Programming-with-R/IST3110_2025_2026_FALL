@@ -1,0 +1,21 @@
+---
+title: "Materials"
+# subtitle: "Weekly Lecture Plan, Evaluation of the Class and Materials"
+engine: knitr
+link-external-icon: true
+link-external-newwindow: true
+---
+
+* IST3110 Lecture notes, Cene, E. (This webpage)
+* R for Data Science, Garrett Grolemund, Hadley Wickham [For the free book please click](https://r4ds.hadley.nz/ "R for Data Science")
+* R Programming for Data Science, Roger D. Peng,  [For the free book please click](https://bookdown.org/rdpeng/rprogdatascience/ "R Programming for Data Science")
+* Practical Data Science with R, Nina Zumel
+* Data Manipulation with R, Phil Spector
+* Efficient R programming, Colin Gillespie [For the free book please click](https://bookdown.org/csgillespie/efficientR/ "Efficient R Programming")
+* Exploratory Data Analysis with R, Roger D. Peng [For the free book please click](https://bookdown.org/rdpeng/exdata/ "Exploratory Data Analysis with R")
+* R Graphics Cookbook, Winston Chang [For the free book please click](https://r-graphics.org/)
+* ggplot2: Elegant Graphics for Data Analysis (3e), Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen.  [For the free book please click](https://ggplot2-book.org/ "ggplot2: Elegant Graphics for Data Analysis")
+* Tidy Modeling with R, Max Kuhn and Julia Silge [For the free book please click](https://www.tmwr.org/ "Tidy Modeling with R")
+* Hands-On Programming with R, Garrett Grolemund [For the free book please click](https://rstudio-education.github.io/hopr/)
+* Advanced R, Hadley Wickham  [For the free book please click](https://adv-r.hadley.nz/ "Advanced R")
+* Introduction to Statistical Learning with Applications in R, Gareth James [For the free book please click](https://www.statlearning.com/ "Introduction to Statistical Learning with Applications in R")

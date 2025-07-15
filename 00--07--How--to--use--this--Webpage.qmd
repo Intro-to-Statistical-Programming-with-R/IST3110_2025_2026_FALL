@@ -1,0 +1,80 @@
+---
+title: "How to use this webpage?"
+# subtitle: "Weekly Lecture Plan, Evaluation of the Class and Materials"
+format: 
+  live-html:
+    css: webex.css
+    include-after-body: webex.js
+engine: knitr
+link-external-icon: true
+link-external-newwindow: true
+---
+
+{{< include ./_extensions/live/_knitr.qmd >}}
+{{< include ./_extensions/live/_gradethis.qmd >}}
+
+This webpage is most likely different from other lecture notes you encountered. 
+
+* Website contains a build in R engine, that will work as long as you are connected to the Internet.
+* Most of the content would work through your web browser even if you did not install R and RStudio.
+* But to prohibit laziness some of the lab sessions are intently designed to be worked on your own computers.
+* Throughout the course you will encounter questions like the following and will require you to solve it.
+
+
+## Sample Question
+
+* If the desired output is `8` what should come to the ______?
+
+:::: {.panel-tabset}
+
+#### Sample Question
+
+```{webr}
+#| exercise: ex_1
+3 + ______ 
+```
+
+#### Solution to Sample Question
+
+::: { .solution exercise="ex_1" }
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+3 + 5 
+```
+
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+gradethis::grade_code()
+```
+
+::::
+
+::: {.callout-warning}
+
+* You will see that, this grading schema is not perfect and we will encounter some bugs throughout the process.
+* If you encounter any bugs such as 
+  * `you wrote a correct answer and the evaluation says it is incorrect` or  
+  * `you wrote an incorrect answer and the evaluation says it is correct` or 
+  * `you find a shortcut to answer a question although it should not be considered as correct` please warn the lecturer.
+
+:::
+
+#### Sample Question 2
+
+```{r setup, include = FALSE}
+## package and list of various exercises
+library("exams2forms")
+exm <- list(
+  c("./exercises/sum_vector.Rmd")
+)
+```
+
+```{r quiz, echo = FALSE, message = FALSE, results = "asis"}
+exams2forms(exm, n = 1)
+```
+

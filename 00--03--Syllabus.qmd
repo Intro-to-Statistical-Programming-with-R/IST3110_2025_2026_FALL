@@ -1,0 +1,32 @@
+---
+title: "Syllabus"
+subtitle: "Weekly Lecture Plan"
+engine: knitr
+link-external-icon: true
+link-external-newwindow: true
+---
+
+## Weekly Draft Course Plan
+
+Draft means that dates and contents may change based on the conditions. 
+
+
+
+| Week | Date                     | Content                                                                             |
+|------|--------------------------|-------------------------------------------------------------------------------------|
+| 1    | 17 February 2025 Monday  | Preface, General Info, Installing R and RStudio, Basic Calculations,<br> Data Types in R: Vectors, Factors, Matrix, Data Frames, Lists. <br> Importing data <br> <span style="color: blue;">Lab Session 1  </span> |
+| 2    | 24 February 2025 Monday  | Control Statements, Data Cleaning, Handling Missing Values <br> <span style="color: blue;">Lab Session 2  </span> |
+| 3    | 03 March 2025 Monday     | Exploratory Data Analysis and Data Visualization: ggplot                    |
+| 4    | 10 March 2025 Monday     | Data Manipulation with dplyr <br>                                                               |
+| 5    | 17 March 2025 Monday     | <span style="color: blue;">Lab Session 3: babynames </span>                                     |
+| 6    | 24 March 2025 Monday     | Hypothesis testing and Inferential Statistics: Rstatix <br> Visualisation with ggpubr <br>  <span style="color: blue;">Lab Session 4: Hypothesis Tests and Inferential Statistics</span>           |
+| 7    | 31 March 2025 Monday     | <span style="color: purple;">RAMADAN HOLIDAY (NO LECTURE) </span>                                    |
+| 8    | 07 April 2025 Monday     | <span style="color: red;">Midterm  1</span>                               |
+| 9    | 14 April 2025 Monday     | Introduction to Statistical Learning, CARET package <br> Splitting the data into train and test datasets |
+| 10   | 21 April 2025 Monday       | Supervised Learning 1: Classification                  |
+| 11   | 28 April 2025 Monday       | Supervised Learning 2: Regression                                                    |
+| 12   | 05 May 2025 Monday       | <span style="color: blue;">Lab Session 5: Supervised Learning </span>                                  |
+| 13   | 12 May 2025 Monday       | <span style="color: red;"> Midterm 2</span>               |
+| 14   | 19 May 2025 Monday      | <span style="color: purple;">Commemoration of Atatürk, Youth and Sports Day (NO LECTURE) </span>                 |
+| 15   | 26 May 2025 Monday      | Unsupervised Learning: Cluster Analysis, Principle Component Analysis (PCA) <br> <span style="color: blue;">Lab Session 6: Unsupervised Learning </span>                |
+
