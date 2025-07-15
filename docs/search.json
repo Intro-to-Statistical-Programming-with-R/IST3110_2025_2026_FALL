@@ -28,434 +28,6 @@
     "text": "Defining Variables in R\n\nAn object in R can be defined with &lt;- or = sign.\n\n\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\n\nGuess The Output?[1] 13"
   },
   {
-    "objectID": "LectureNotes/Week01/index.html#basic-math-in-r",
-    "href": "LectureNotes/Week01/index.html#basic-math-in-r",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Basic Math in R",
-    "text": "Basic Math in R\n\n43 + 35 # addition\n\n[1] 78\n\n\n\n43 - 35 # subtraction\n\n[1] 8\n\n\n\n12 * 8 # multiplication\n\n[1] 96\n\n\n\n100 / 8 # division\n\n[1] 12.5\n\n\n\n2^4 # power\n\n[1] 16\n\n\n\n100 %% 8 # remainder\n\n[1] 4\n\n\n\n100 %/% 8 # divident\n\n[1] 12"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#vectorization",
-    "href": "LectureNotes/Week01/index.html#vectorization",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Vectorization",
-    "text": "Vectorization\n\nA key difference between R and many other languages is a topic known as vectorization.\nIn many other languages many functions are to be applied individually to each element in a vector of numbers which requires a loop function like for or while.\nBut in R, many cases you don’t have to define loops although you can use them normally.\nIn R, one dimensional arrays are defined with the function c() which is the shorthand for combine.\nThree vectors, x, y and z are already defined for you.\n\n\nx &lt;- c(1, 3, 4)\ny &lt;- c(1, 2, 4)\n\n# empty vector\nz &lt;- as.vector(NULL)\n\n\nLook at the outputs of each one.\n\n\nx\n\nInspect The Output?[1] 1 3 4\n\n\n\n\ny\n\nInspect The Output?[1] 1 2 4\n\n\n\n\nz\n\nInspect The Output?NULL\n\n\n\n\nIn other languages you might have to run a loop to add two vectors together.\nA for loop may be required to iterate over every elements of vectors.\n\n\n# empty vector\nz &lt;- as.vector(NULL)\n# for loop to add corresponding elements in each vector\nfor (i in seq_along(x)) {\nz[i] &lt;- x[i] + y[i]\nprint(z)\n}\n\n[1] 2\n[1] 2 5\n[1] 2 5 8\n\n\n\nz\n\n[1] 2 5 8\n\n\n\nInstead, in R, + is a vectorized function which can operate on entire vectors at once.\nSo rather than creating for loops for many functions, you can just use simple syntax :\n\n\nx + y\n\n[1] 2 5 8\n\n\n\nx * y\n\n[1]  1  6 16\n\n\n\nx &gt; y\n\n[1] FALSE  TRUE FALSE\n\n\n\nWhen performing vector operations in R , it is important to know about recycling.\nWhen performing an operation on two or more vectors of unequal length, R will recycle elements of the shorter vector(s) to match the longest vector. For example:\n\n\nlong &lt;- 1:10\nshort &lt;- 1:5\n\n\nlong\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\n\nshort\n\n[1] 1 2 3 4 5\n\n\n\nlong + short\n\n [1]  2  4  6  8 10  7  9 11 13 15\n\n\n\nlong * c\n\n [1]  3  6  9 12 15 18 21 24 27 30\n\n\n\neven_length + odd_length\n\n [1]  2  4  6  5  7  9  8 10 12 11"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#functions",
-    "href": "LectureNotes/Week01/index.html#functions",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Functions",
-    "text": "Functions\n\nFunctions are special commands that are designed for a particular purpose.\nFor example sum() gives the sum of a numerical values, sqrt() takes root of a number etc..\nFunctions are always followed by a (). Inside the () most of the functions take some special values called arguments.\nLets look at the help page for the sqrt() function.\n\n?sqrt\n\n\n\n\nHelp Documentation for sqrt() function\n\n\n\n\n\nsqrt() function only takes one argument x which is either a single number, or arrays of numbers.\n\n\nsqrt(8)\n\n[1] 2.828427\n\n\n\nsqrt(c(1,4,9,16,25))\n\n[1] 1 2 3 4 5\n\n\n\nLets look at the help page for the sum() function.\n\n?sum\n\n\n\n\nHelp Documentation for sum() function\n\n\n\n\nAccording to the help file the usage of function is sum(..., na.rm = FALSE)\n\n\nsum() function takes two arguments.\n\n\n... numeric or complex or logical vectors.\n\nna.rm logical. Should missing values (including NaN) be removed?\n\n\nThe second argument na.rm has a default value of FALSE. A default value means that if you don’t specify a value, it will take the default value, here FALSE.\n\n\nx&lt;- c(6, 8, 10, 12, 14)\n\n\nsum(x)\n\n[1] 50\n\n\n\nsum(x, na.rm = FALSE)\n\n[1] 50\n\n\n\nsum(x, na.rm = TRUE)\n\n[1] 50\n\n\n\ny&lt;- c(6, 8, 10, 12, NA)\n\n\nsum(y)\n\n[1] NA\n\n\n\nsum(y, na.rm = FALSE)\n\n[1] NA\n\n\n\nsum(y, na.rm = TRUE)\n\n[1] 36\n\n\n\nz &lt;- c(T, T, F, F, F, T, T)\nsum(z)\n\n[1] 4"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#packages",
-    "href": "LectureNotes/Week01/index.html#packages",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Packages",
-    "text": "Packages\n\nSome functions are not contained locally in R. They are called packages and they should be installed when needed.\nR contains one or more libraries of packages. A package contain various functions and data sets for numerous purposes, e.g. e1071 package, spatstat package and DandEFA package, etc.\nSome packages are a part of the R. Others should be downloaded from the Comphrensive R Archive Network (CRAN).\nTo access all of the functions and data sets of a particular package; for example, DandEFA; it must be loaded to the workspace:\n\n\nYou can also use Rstudio to download multiple packages easily and at once.\nTools -&gt; Install Packages\n\n\nInstall Packages with RStudio"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#an-example-for-packages-dandefa-package",
-    "href": "LectureNotes/Week01/index.html#an-example-for-packages-dandefa-package",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "An Example for Packages: DandEFA Package",
-    "text": "An Example for Packages: DandEFA Package\n\nUsing packages to utilize various methods and algorithms.\n\nDandEFA package contains functions for a particular analysis called factor analysis.\nFactor Analysis is a method for categorize variables into groups to find the relationship between the variables in the same group.\nThe package contains functions:\n\n\nfactload: A method for producing the factor loadings\n\ndandelion: A method for visualizing the factor loadings\n\n\n\nhelp(package=\"DandEFA\")\n\n\n\n\nGetting help with RStudio for a package with code\n\n\n\n\nAlternatively you can also use the bottom-right panel in RStudio to get info on a specific function:\n\n\n\n\n\nGetting help with RStudio from the menu\n\n\n\n\n\n\nLoadings:\n     [,1]   [,2]   [,3]   [,4]   [,5]  \nX10A                0.103 -0.101 -0.224\nX10B                                   \nX10C         0.106               -0.129\nX11A                      -0.544 -0.130\nX11B                      -0.514       \nX11C -0.129 -0.105        -0.500       \nX11D                      -0.475       \nX12A -0.116        -0.152 -0.338  0.318\nX12B        -0.254 -0.133 -0.328  0.256\nX12C        -0.149 -0.136 -0.298  0.249\nX13A         0.549                     \nX13B         0.504                     \nX13C         0.583                     \nX13D         0.398                     \nX13E         0.595                     \nX13F         0.458                     \nX17A -0.539        -0.419 -0.140       \nX17B  0.633         0.156        -0.164\nX17C -0.350        -0.450 -0.185       \nX17D  0.727         0.222        -0.173\nX17E -0.325        -0.337 -0.164       \nX17F -0.611        -0.445 -0.143       \nX17G -0.252        -0.481 -0.145  0.157\nX18A -0.303        -0.420 -0.267 -0.138\nX18B  0.537  0.146         0.152 -0.152\nX18C -0.353        -0.326 -0.192       \nX18D -0.416        -0.413 -0.277       \nX18E -0.160        -0.381 -0.239 -0.125\nX19A -0.540        -0.443 -0.135 -0.254\nX19B  0.633  0.119                     \nX19C  0.694         0.158              \nX19D -0.519        -0.424 -0.163 -0.256\nX19E  0.687  0.112                     \nX19F -0.415        -0.462 -0.124 -0.361\nX19G -0.313        -0.491 -0.220 -0.359\nX19H -0.383        -0.500 -0.214 -0.361\nX19I  0.690                            \nX19J -0.238        -0.507 -0.158       \nX19K               -0.620         0.142\nX19L               -0.714         0.124\nX19M               -0.749         0.101\nX19N -0.184        -0.654              \nX21A               -0.120 -0.106       \n\n                [,1]  [,2]  [,3]  [,4]  [,5]\nSS loadings    5.576 1.851 4.965 1.987 1.076\nProportion Var 0.130 0.043 0.115 0.046 0.025\nCumulative Var 0.130 0.173 0.288 0.334 0.359\n\n\n\n\n\n\n\n\n\nIn summary, packages provide a flexible environment.\nEmploying multiple methods and algorithms in the same time\nProgramming and using packages are two core elements in R."
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#working-directory",
-    "href": "LectureNotes/Week01/index.html#working-directory",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Working Directory",
-    "text": "Working Directory\n\nIn order to work in R, you should specify a active working directory. In brief this is the location where R will get and save the files.\nYou can call the active working directory with the command getwd()\n\n\n\n\n\n\n\n\n\n\n\nYou can change your active working directory either by using setwd() function or by using Session -&gt; Set Working Directory -&gt; To Source File Location after saving a script."
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#listing-and-removing-objects",
-    "href": "LectureNotes/Week01/index.html#listing-and-removing-objects",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Listing and removing objects",
-    "text": "Listing and removing objects\n\n\nls() lists all the objects currently contained in directory.\n\nexists() checks whether an element is defined.\n\nrm() removes objects from the directory.\nYou can remove everything in your directory with the command rm(list = ls())\n\n\n\n\n[1] \"i\" \"S\" \"x\" \"y\" \"z\"\n\n\n\n\n[1] TRUE\n\n\n\n\n[1] FALSE\n\n\n\n\n[1] FALSE\n\n\n\n\n[1] \"i\" \"S\"\n\n\n\n\ncharacter(0)"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#looking-at-history",
-    "href": "LectureNotes/Week01/index.html#looking-at-history",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Looking at History",
-    "text": "Looking at History\n\n# default shows 25 most recent commands\nhistory()\n\nError in .External2(C_savehistory, file): 'savehistory' can only be used in Rgui and Rterm"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#saving-and-loading-objects-for-future-use",
-    "href": "LectureNotes/Week01/index.html#saving-and-loading-objects-for-future-use",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Saving and Loading Objects for Future Use",
-    "text": "Saving and Loading Objects for Future Use\n\nYou can also save and load your workspaces.\nSaving your workspace will save all R files and objects within your workspace to a .RData file in your working directory.\nLoading your workspace will load any .RData files in your working directory.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncharacter(0)\n\n\n\n\n[1] \"x\" \"z\""
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#working-with-different-types-of-data-in-r",
-    "href": "LectureNotes/Week01/index.html#working-with-different-types-of-data-in-r",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Working with Different Types of Data in R",
-    "text": "Working with Different Types of Data in R\nR classifies all the different data types into five classes.\n\ninteger\nnumeric\ncharacter\ncomplex\nlogical"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#generating-sequence-of-non-random-numbers",
-    "href": "LectureNotes/Week01/index.html#generating-sequence-of-non-random-numbers",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Generating Sequence of Non-random Numbers",
-    "text": "Generating Sequence of Non-random Numbers\n\nTo specify consecutive sequence with integers between two numbers : operator is used.\nAlternatively the function c() can be used.\n\n\n# create a vector of integers between 1 and 10\n1:10\n\nGuess The Output? [1]  1  2  3  4  5  6  7  8  9 10\n\n\n\n\n# create a vector consisting of 1, 5, and 10\nc(1, 5, 10)\n\nGuess The Output?[1]  1  5 10\n\n\n\n\n# save the vector of integers between 1 and 10 as object x\nx &lt;- 1:10\nx\n\nGuess The Output? [1]  1  2  3  4  5  6  7  8  9 10"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#comparing-numeric-values",
-    "href": "LectureNotes/Week01/index.html#comparing-numeric-values",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Comparing Numeric Values",
-    "text": "Comparing Numeric Values\nComparison Operators in R\n\n\n[1] TRUE\n\n\n\n\n[1] FALSE\n\n\n\n\n[1] TRUE\n\n\n\n\n[1] TRUE\n\n\n\n\n[1] TRUE\n\n\n\n\n[1] FALSE\n\n\n\nAlso we can use objects to make comparisons,\n\n\n\n[1] FALSE\n\n\n\nIn addition we can compare multiple elements in a vector,\n\n\n\n[1] FALSE  TRUE  TRUE FALSE\n\n\n\nNote that logical values TRUE and FALSE equate to 1 and 0 respectively. So,\n\n\n\n[1] 2\n\n\n\nIf you need to identify the location of pairwise equalities in two vectors you can wrap the operation in the which() function:\n\n\n\n[1] 2 3\n\n\nExact Equality\n\nTo test if two objects are exactly equal:\n\n\n\n[1] FALSE\n\n\n\n\n[1] TRUE\n\n\nFloating Point Comparison\n\nSometimes you wish to test for “near equality”. The all.equal() function allows you to test for equality with a difference tolerance of 1.5e-8.\n\n\n\n[1] TRUE\n\n\n\nIf the difference is greater than the tolerance level the function will return the mean relative difference:\n\n\n\n[1] \"Mean relative difference: 0.0003997102\"\n\n\n\nYou can also change the amount of tolerance with the tolerance() argument.\n\n\n\n[1] \"Mean relative difference: 0.0002499063\"\n\n\n\n\n[1] TRUE"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#rounding-numbers",
-    "href": "LectureNotes/Week01/index.html#rounding-numbers",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Rounding Numbers",
-    "text": "Rounding Numbers\n\nThere are many ways of rounding to the nearest integer , up, down, or toward a specified decimal place.\n\n\nx &lt;- c(1, 1.35, 1.7, 2.05, 2.4, 2.75, 3.1, 3.45, 3.8, 4.15, 4.5, 4.85, 5.2, 5.55, 5.9)\n\n\n# Round to the nearest integer\nround(x)\n\nGuess The Output? [1] 1 1 2 2 2 3 3 3 4 4 4 5 5 6 6\n\n\n\n\n# Round up\nceiling(x)\n\nGuess The Output? [1] 1 2 2 3 3 3 4 4 4 5 5 5 6 6 6\n\n\n\n\n# Round down\nfloor(x)\n\nGuess The Output? [1] 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5\n\n\n\n\n# Round to a specified decimal\nround(x, digits = 1)\n\nGuess The Output? [1] 1.0 1.4 1.7 2.0 2.4 2.8 3.1 3.5 3.8 4.2 4.5 4.8 5.2 5.6 5.9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\nWeek 1 - Basics of R"
-  },
-  {
-    "objectID": "LabSession01Main.html",
-    "href": "LabSession01Main.html",
-    "title": "Lab Session 01",
-    "section": "",
-    "text": "You can switch to full screen mode by pressing ff.\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "About the Instructor!",
-      "Week 01 - Introduction to R",
-      "Lab Session 01"
-    ]
-  },
-  {
-    "objectID": "exercises/sum_vector.html",
-    "href": "exercises/sum_vector.html",
-    "title": "Question",
-    "section": "",
-    "text": "Question\nConsider the following vector in R: \\[v1 = 10, 4, 2, 3, 8\\] What is the output of the following R Code: \\[sum(v1)\\]\n\n\nSolution\nWe need to calculate the sum of all the elements in the vector with a help of r function such as sum().\n\\[10+4+2+3+8 = 27\\]\n\n\nMeta-information\nextype: num exsolution: 27 extol: 0.01 exname: sum of a vector\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "01--01--Data--Types--Main.html",
-    "href": "01--01--Data--Types--Main.html",
-    "title": "Week 01 – Basics of R",
-    "section": "",
-    "text": "You can switch to full screen mode by pressing ff.\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "About the Instructor!",
-      "Week 01 - Introduction to R",
-      "Week 01 -- Basics of R"
-    ]
-  },
-  {
-    "objectID": "00--07--How--to--use--this--Webpage.html",
-    "href": "00--07--How--to--use--this--Webpage.html",
-    "title": "How to use this webpage?",
-    "section": "",
-    "text": "This webpage is most likely different from other lecture notes you encountered.",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "How to use this webpage?"
-    ]
-  },
-  {
-    "objectID": "00--07--How--to--use--this--Webpage.html#sample-question",
-    "href": "00--07--How--to--use--this--Webpage.html#sample-question",
-    "title": "How to use this webpage?",
-    "section": "Sample Question",
-    "text": "Sample Question\n\nIf the desired output is 8 what should come to the ______?\n\n\nSample QuestionSolution to Sample Question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3 + 5 \n3 + 5 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nYou will see that, this grading schema is not perfect and we will encounter some bugs throughout the process.\nIf you encounter any bugs such as\n\nyou wrote a correct answer and the evaluation says it is incorrect or\n\nyou wrote an incorrect answer and the evaluation says it is correct or\nyou find a shortcut to answer a question although it should not be considered as correct please warn the lecturer.\n\n\n\n\n\nSample Question 2\n\n\nConsider the following vector in R: \\[v1 = 1, 6, 2, 9, 7\\] What is the output of the following R Code: \\[sum(v1)\\]\n\n\n\nWe need to calculate the sum of all the elements in the vector with a help of r function such as sum().\n\\[1+6+2+9+7 = 25\\]\n\n\n\n\nSample Questions 3\n\n---\nprimary_color: orange\nsecondary_color: lightgray\ntext_color: black\nshuffle_questions: false\nshuffle_answers: true\n---\n\n# Python Lists\n\nWhat is the value of `x[2]`?\n\n&gt; Python lists are mutable!\n\n~~~python\nx = [2, 3, 4]\nx[2] = 4\nprint(x[2])\n~~~\n\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [x] 4\n\n## The sound of dog\n\nWhat do dogs sound like?\n\n&gt; Some hint\n\n- [ ] yes\n- [ ] no\n- [ ] `self.sound = \"meow\"`\n- [x] wuff\n\n## Put the [days](https://en.wikipedia.org/wiki/Day) in order!\n\n&gt; Monday is the *first* day of the week.\n\n1. Monday\n2. Tuesday\n3. Wednesday\n4. Friday\n5. Saturday  \n\n\nSample Question 4Solution to Sample Question\n\n\n\nrand_int = Math.floor(Math.random() * 10000);\n\n\n\n\n\n\nWrite an R function that takes a single variable x and returns that value multiplied by .\n\n\n\n\n\n\n\n\n\n\n\n\n\nmy_function &lt;- function(x) {\n  x * ${rand_int}\n}\nmy_function &lt;- function(x) {\n  x * ${rand_int}\n}",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "How to use this webpage?"
-    ]
-  },
-  {
-    "objectID": "00--05--Materials.html",
-    "href": "00--05--Materials.html",
-    "title": "Materials",
-    "section": "",
-    "text": "IST3110 Lecture notes, Cene, E. (This webpage)\nR for Data Science, Garrett Grolemund, Hadley Wickham For the free book please click\nR Programming for Data Science, Roger D. Peng, For the free book please click\nPractical Data Science with R, Nina Zumel\nData Manipulation with R, Phil Spector\nEfficient R programming, Colin Gillespie For the free book please click\nExploratory Data Analysis with R, Roger D. Peng For the free book please click\nR Graphics Cookbook, Winston Chang For the free book please click\nggplot2: Elegant Graphics for Data Analysis (3e), Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen. For the free book please click\nTidy Modeling with R, Max Kuhn and Julia Silge For the free book please click\nHands-On Programming with R, Garrett Grolemund For the free book please click\nAdvanced R, Hadley Wickham For the free book please click\nIntroduction to Statistical Learning with Applications in R, Gareth James For the free book please click\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "Materials"
-    ]
-  },
-  {
-    "objectID": "00--03--Syllabus.html",
-    "href": "00--03--Syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Draft means that dates and contents may change based on the conditions.\n\n\n\n\n\n\n\n\nWeek\nDate\nContent\n\n\n\n\n1\n17 February 2025 Monday\nPreface, General Info, Installing R and RStudio, Basic Calculations, Data Types in R: Vectors, Factors, Matrix, Data Frames, Lists.  Importing data  Lab Session 1 \n\n\n2\n24 February 2025 Monday\nControl Statements, Data Cleaning, Handling Missing Values  Lab Session 2 \n\n\n3\n03 March 2025 Monday\nExploratory Data Analysis and Data Visualization: ggplot\n\n\n4\n10 March 2025 Monday\nData Manipulation with dplyr \n\n\n5\n17 March 2025 Monday\nLab Session 3: babynames \n\n\n6\n24 March 2025 Monday\nHypothesis testing and Inferential Statistics: Rstatix  Visualisation with ggpubr  Lab Session 4: Hypothesis Tests and Inferential Statistics\n\n\n7\n31 March 2025 Monday\nRAMADAN HOLIDAY (NO LECTURE) \n\n\n8\n07 April 2025 Monday\nMidterm 1\n\n\n9\n14 April 2025 Monday\nIntroduction to Statistical Learning, CARET package  Splitting the data into train and test datasets\n\n\n10\n21 April 2025 Monday\nSupervised Learning 1: Classification\n\n\n11\n28 April 2025 Monday\nSupervised Learning 2: Regression\n\n\n12\n05 May 2025 Monday\nLab Session 5: Supervised Learning \n\n\n13\n12 May 2025 Monday\n Midterm 2\n\n\n14\n19 May 2025 Monday\nCommemoration of Atatürk, Youth and Sports Day (NO LECTURE) \n\n\n15\n26 May 2025 Monday\nUnsupervised Learning: Cluster Analysis, Principle Component Analysis (PCA)  Lab Session 6: Unsupervised Learning",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "00--03--Syllabus.html#weekly-draft-course-plan",
-    "href": "00--03--Syllabus.html#weekly-draft-course-plan",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Draft means that dates and contents may change based on the conditions.\n\n\n\n\n\n\n\n\nWeek\nDate\nContent\n\n\n\n\n1\n17 February 2025 Monday\nPreface, General Info, Installing R and RStudio, Basic Calculations, Data Types in R: Vectors, Factors, Matrix, Data Frames, Lists.  Importing data  Lab Session 1 \n\n\n2\n24 February 2025 Monday\nControl Statements, Data Cleaning, Handling Missing Values  Lab Session 2 \n\n\n3\n03 March 2025 Monday\nExploratory Data Analysis and Data Visualization: ggplot\n\n\n4\n10 March 2025 Monday\nData Manipulation with dplyr \n\n\n5\n17 March 2025 Monday\nLab Session 3: babynames \n\n\n6\n24 March 2025 Monday\nHypothesis testing and Inferential Statistics: Rstatix  Visualisation with ggpubr  Lab Session 4: Hypothesis Tests and Inferential Statistics\n\n\n7\n31 March 2025 Monday\nRAMADAN HOLIDAY (NO LECTURE) \n\n\n8\n07 April 2025 Monday\nMidterm 1\n\n\n9\n14 April 2025 Monday\nIntroduction to Statistical Learning, CARET package  Splitting the data into train and test datasets\n\n\n10\n21 April 2025 Monday\nSupervised Learning 1: Classification\n\n\n11\n28 April 2025 Monday\nSupervised Learning 2: Regression\n\n\n12\n05 May 2025 Monday\nLab Session 5: Supervised Learning \n\n\n13\n12 May 2025 Monday\n Midterm 2\n\n\n14\n19 May 2025 Monday\nCommemoration of Atatürk, Youth and Sports Day (NO LECTURE) \n\n\n15\n26 May 2025 Monday\nUnsupervised Learning: Cluster Analysis, Principle Component Analysis (PCA)  Lab Session 6: Unsupervised Learning",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "00--01--General--Info.html",
-    "href": "00--01--General--Info.html",
-    "title": "General Info",
-    "section": "",
-    "text": "Analytical thinking and ability to solve problems.\nInterest in statistical programming.\nHaving time to investigate and curiosity.",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "General Info"
-    ]
-  },
-  {
-    "objectID": "00--01--General--Info.html#what-is-the-prequisite-for-this-course",
-    "href": "00--01--General--Info.html#what-is-the-prequisite-for-this-course",
-    "title": "General Info",
-    "section": "",
-    "text": "Analytical thinking and ability to solve problems.\nInterest in statistical programming.\nHaving time to investigate and curiosity.",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "General Info"
-    ]
-  },
-  {
-    "objectID": "00--01--General--Info.html#which-programs-you-should-download-and-install",
-    "href": "00--01--General--Info.html#which-programs-you-should-download-and-install",
-    "title": "General Info",
-    "section": "Which programs you should download and install",
-    "text": "Which programs you should download and install\n\nR programming language (required) (the link for CRAN project).\nRStudio (Not required but strongly recommended) (the website of RStudio)",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "General Info"
-    ]
-  },
-  {
-    "objectID": "00--01--General--Info.html#what-this-course-will-cover",
-    "href": "00--01--General--Info.html#what-this-course-will-cover",
-    "title": "General Info",
-    "section": "What this course will cover",
-    "text": "What this course will cover\nThis course mainly divided into four parts.\n\nIntroduction to R.\nData wrangling with R.\nData visualization with R.\nHypothesis testing with R.\nIntroduction to Machine Learning with R.",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "General Info"
-    ]
-  },
-  {
-    "objectID": "00--01--General--Info.html#what-you-will-learn-after-each-section",
-    "href": "00--01--General--Info.html#what-you-will-learn-after-each-section",
-    "title": "General Info",
-    "section": "What you will learn after each section",
-    "text": "What you will learn after each section\n\nAfter the Introduction to R section you will learn:\n\nHow to work with different Data Types in R.\nHow to import and export data in different formats.\nHow to deal with dates.\nHow to develop your own functions and use loop control structures to reduce code redundancy.\n\nIn this part you will mostly use:\n\nBase R functions\nreadr, write_xl for importing and exporting data.\nlubridate package for dealing with dates.\n\nAfter the Data wrangling with R section you will learn\n\nHow to use pipe operators to simplify your code and make it more readable.\nHow to reshape the layout of your data, and manipulate, summarize, and join data sets.\n\nIn this part you will mostly use:\n\ndplyr\ntidyr\n\nAfter the Data visualization with R section you will learn\n\nWhich graphical methods is suitable for your data.\nHow to prepare and transform the data for visualization.\nHow to make visualizations with ggplot.\nHow to integrate pipe operator with ggplot.\n\nIn this part you will mostly use:\n\nbase r functions for visualizations\nggplot\n\nAfter the Hypothesis testing with R section you will learn\n\nHow to make basic statistical hypothesis testing with R.\n\nIn this part you will mostly use:\n\nrstatix\n\nAfter the Introduction to Machine Learning with R section you will learn.\n\nWhat is machine learning?\nWhat is train and test data?\nWhat are the types of machine learning?\nHow to implement classification algorithms, regression algorithms and principle component analysis in R.\n\nIn this part you will mostly use:\n\ncaret",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "General Info"
-    ]
-  },
-  {
-    "objectID": "00--02--Installing--R--and--RStudio.html",
-    "href": "00--02--Installing--R--and--RStudio.html",
-    "title": "R and RStudio",
-    "section": "",
-    "text": "R is a suite of software facilities for:\n\nReading and manipulating data\nComputation\nConducting statistical data analysis\nApplication and development of Machine Learning Algorithms\nDisplaying the results\n\nR is the open-source version (i.e. freely available version - no license fee) of the S programming language, a language for manipulating objects.\nSoftware and packages can be downloaded from the link for CRAN project\n\n\n\n\n\n\nR Console",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "R and RStudio"
-    ]
-  },
-  {
-    "objectID": "00--02--Installing--R--and--RStudio.html#what-is-r",
-    "href": "00--02--Installing--R--and--RStudio.html#what-is-r",
-    "title": "R and RStudio",
-    "section": "",
-    "text": "R is a suite of software facilities for:\n\nReading and manipulating data\nComputation\nConducting statistical data analysis\nApplication and development of Machine Learning Algorithms\nDisplaying the results\n\nR is the open-source version (i.e. freely available version - no license fee) of the S programming language, a language for manipulating objects.\nSoftware and packages can be downloaded from the link for CRAN project\n\n\n\n\n\n\nR Console",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "R and RStudio"
-    ]
-  },
-  {
-    "objectID": "00--02--Installing--R--and--RStudio.html#rstudio",
-    "href": "00--02--Installing--R--and--RStudio.html#rstudio",
-    "title": "R and RStudio",
-    "section": "RStudio",
-    "text": "RStudio\n\nThe R Console by itself is not very interesting and useful. A tool named RStudio is designed to use R more efficient and easily.\nRStudio can be installed after installing R.\nRStudio won’t work without R. R has to be installed on your computer.\nYou can think RStudio as an upgrade of R, on visual and functionality terms. It doesn’t add anything that R cannot do.\nRStudio can be downloaded from the website of RStudio\n\n\n\n\n\n\nRStudio General View\n\n\n\n\n\nRStudio have 4 main parts:\n\n\n\n\n\n\nRStudio description of windows",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "R and RStudio"
-    ]
-  },
-  {
-    "objectID": "00--02--Installing--R--and--RStudio.html#using-r-and-rstudio-from-posit-cloud",
-    "href": "00--02--Installing--R--and--RStudio.html#using-r-and-rstudio-from-posit-cloud",
-    "title": "R and RStudio",
-    "section": "Using R and RStudio from Posit Cloud",
-    "text": "Using R and RStudio from Posit Cloud\n\nIf you are a beginner at R and will only use it for the lecture then you may not want to install it into your computer.\nA great alternative for this is to use Posit Cloud.\nPosit is the company that is the founder of RStudio and provides a cloud solution for using R and Rstudio.\nFirst, go to the website of Posit\nClick Sign Up at the upper right part of the page\n\n\n\n\n\n\nPosit Main Page\n\n\n\n\n\nThen, select the free plan and click Learn more.\nThe Free Plan gives you 25 hours of computing time per month which should be sufficient for this course.\nIf you ever think that you are going to exceed the limit you can always download and install R and RStudio to your computer for free.\n\n\n\n\n\n\nSelect Posit Free Plan\n\n\n\n\n\nClick Sign Up at the next page.\n\n\n\n\n\n\nSign Up Posit Free Plan\n\n\n\n\n\nEnter your e-mail, a password, your name and your surname to register to posit cloud.\n\n\n\n\n\n\nRegister Posit Free Plan\n\n\n\n\n\nAfter registering and possibly confirming your mail address, you can login with your e-mail and password.\nYou will encounter the following page when you successfully login to the Posit Cloud.\nSelect New Project and New RStudio Project from the upper right buttons.\n\n\n\n\n\n\nRegister Posit Free Plan\n\n\n\n\n\nAfter a short period of deployment time, a fresh Rstudio will open as in the following picture.\n\n\n\n\n\n\nPosit Cloud Main Screen\n\n\n\n\n\nGive a new name to your project and open a R script to work on from the menu File \\(\\rightarrow\\) New File \\(\\rightarrow\\) R Script.\n\n\n\n\n\n\nRStudio Main Screen\n\n\n\n\n\nNow you can start to use RStudio in cloud and make your computations.\n\n\n\n\n\n\nRStudio with an Open Script",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "R and RStudio"
-    ]
-  },
-  {
-    "objectID": "00--02--Installing--R--and--RStudio.html#advantages-of-r",
-    "href": "00--02--Installing--R--and--RStudio.html#advantages-of-r",
-    "title": "R and RStudio",
-    "section": "Advantages of R",
-    "text": "Advantages of R\n\nOpen Source:\n\nThere is no clear difference between user and developer.\nA unique solution for the given problem can be constructed.\nYou are not limited to pre-defined options by a fixed user interface as is common in proprietary software.\nOpen source also allows to use the program freely without spending any money.\n\nFlexibility:\n\nGives access to the source code, allows to modify and improve it according to the needs.\nAbility to further developments and capacity increase with tools like RStudio and Shiny.\nNew packages to solve a certain problem is consistently added to the R repository.\nAbility to produce reports in PDF and HTML format.\n\nCommunity:\n\nR has a lot of material in online platforms, in books and in courses.\nA lot of information can be found via Q&A websites, social media networks, and numerous blogs.",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "R and RStudio"
-    ]
-  },
-  {
-    "objectID": "00--04--Evaluation.html",
-    "href": "00--04--Evaluation.html",
-    "title": "Evaluation of the Course",
-    "section": "",
-    "text": "There will be one midterm (25%).\nSix quizzes (total 25%, with different weights). Quizzes will be conducted on FEFMOD. You will need to download Safe Exam Browser into your phones to participate the quizzes.\nOne final exam (40%).\nMidterm and final exams will be conducted on paper with multiple choice questions.\nThe midterm 1 possibly will take place on  Week 8 - 07-11 April 2025 .\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "Evaluation of the Course"
-    ]
-  },
-  {
-    "objectID": "00--06--Useful--Websites.html",
-    "href": "00--06--Useful--Websites.html",
-    "title": "Useful Websites",
-    "section": "",
-    "text": "Typically, a problem you may be encountering is not new and others have faced, solved, and documented the same issue online.\n\nThe following resources can be used to search for online help. Although, I typically just google the problem and find answers relatively quickly.\nRSiteSearch(“key phrase”): searches for the key phrase in help manuals and archived mailing lists on the R Project website at http://search.r-project.org/.\nStack Overflow: a searchable Q&A site oriented toward programming issues. 75 % of my answers typically come from Stack Overflow questions tagged for R at stackoverflow.\nCross Validated: a searchable Q&A site oriented toward statistical analysis. Many questions regarding specific statistical functions in R are tagged for R at crossvalidated.\nR–seek: a Google custom search that is focused on R-specific websites. Located at rseek\nR -bloggers: a central hub of content collected from over 500 bloggers who provide news and tutorials about R. Located at rbloggers.\nChatGPT obviously chatgpt.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "Useful Websites"
-    ]
-  },
-  {
-    "objectID": "01--01--basicsR.html#writing-your-first-script",
-    "href": "01--01--basicsR.html#writing-your-first-script",
-    "title": "Basics of R Programming Language",
-    "section": "Writing Your First Script",
-    "text": "Writing Your First Script\n\nYou can either write a code directly into the console or you can use a script.\nUsing a script is more efficient. Because it is easier to write modify and save a R Code in a script.\nOpen a script with File \\(\\rightarrow\\) New File \\(\\rightarrow\\) R Script or you can use shortcut Ctrl + Shift + N",
-    "crumbs": [
-      "About the Instructor!",
-      "Week 01 - Introduction to R",
-      "Basics of R Programming Language"
-    ]
-  },
-  {
-    "objectID": "01--01--basicsR.html#objects",
-    "href": "01--01--basicsR.html#objects",
-    "title": "Basics of R Programming Language",
-    "section": "Objects",
-    "text": "Objects\n\nR works by creating objects and using various functions calls that create and use these objects. For example;\n\nVectors of numbers, logical values (TRUE and FALSE), character strings and even complex numbers.\nMatrices and general n-way arrays\nLists - arbitrary collections of objects of any type; e.g. list of vectors, list of matrices, etc.\nData frames - a general data set type\nfunctions (yes even functions are objects)",
-    "crumbs": [
-      "About the Instructor!",
-      "Week 01 - Introduction to R",
-      "Basics of R Programming Language"
-    ]
-  },
-  {
-    "objectID": "01--01--basicsR.html#defining-variables-in-r",
-    "href": "01--01--basicsR.html#defining-variables-in-r",
-    "title": "Basics of R Programming Language",
-    "section": "Defining Variables in R",
-    "text": "Defining Variables in R\n\nYou can either use a = or &lt;- operators to define a variable in R. Though both of them are fine, &lt;- is a more common approach while using R.\n\n\nExercise 1\n\nExercise 1 QuestionSolution to Exercise 1\n\n\n\nCreate a variable x and assign value 5.\nCreate another variable y and assign value 8.\nCreate a third variable z and assign sum of x and y.\nFinally print the value z to the console.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\n\n\n\n\n\n\n\n\n\n\n\nExercise 2\n\nExercise 2 QuestionSolution to Exercise 2\n\n\n\nCreate a variable x and assign value 5.\nCreate another variable y and assign value 8.\nCreate a third variable z and assign sum of x and y.\nFinally print the value z to the console.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote 1: Using print vs not using print\n\n\n\n\n\nYou do not have to wrap an object with print() function in R. Both z and print(z) would give the same output in R. One case that you would prefer to use print() function is inside the loops (for(), if(), while() etc.).  Without a print() function the objects inside a loop won’t be printed at the console.",
-    "crumbs": [
-      "About the Instructor!",
-      "Week 01 - Introduction to R",
-      "Basics of R Programming Language"
-    ]
-  },
-  {
-    "objectID": "01--01--basicsR.html#exercise-3",
-    "href": "01--01--basicsR.html#exercise-3",
-    "title": "Basics of R Programming Language",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\n\nCode\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n\n\n\n\n\n\n\n\nFigure 1: Temperature and ozone level.",
-    "crumbs": [
-      "About the Instructor!",
-      "Week 01 - Introduction to R",
-      "Basics of R Programming Language"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About the Instructor!",
-    "section": "",
-    "text": "I am Erhan Cene, working as an associate professor at the Yildiz Technical University, Istanbul, Turkey in the department of statistics (see university webpage).\nMy broad research interest is on data science and statistical programming especially (but not limited to) in sports analytics and biostatistics (see publication list).\nI mostly give programming courses such as Introduction to Python, Statistical Programming with R, Database and Web Programming along with the Sampling 1 course at the undergraduate level and Data Manipulation and Visualisation course at the graduate level.\nI started to prepare the lecture notes in Rmarkdown format a few years ago, then combined them via bookdown package for better and tidy look. With bookdown I also learned to use GitHub Pages and now I started to use Quarto to add some interactivity on my lecture notes.\nYou can contact with me through linkedin for any enquiry and possible collaboration.\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Preface",
-    "section": "",
-    "text": "This book is created for accompanying lecture notes for the undergraduate course IST3110 - Statistical Programming with R.\nThe motivation behind this book is to provide a comprehensive and easy to understand lecture notes in a tidy way.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "About the Instructor!",
-      "Before Starting - Week 0",
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "LabSessions/LabSession01/index.html#title-slide",
-    "href": "LabSessions/LabSession01/index.html#title-slide",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "",
-    "text": "Introduction to Programming with R\nLab Session 01 - Introduction to R\n\nErhan Ceneecene@yildiz.edu.trYildiz Technical University, Department of Statistics\n\n\nPublished: Oct 10, 2022\n\nLast updated: Jul 15, 2025"
-  },
-  {
-    "objectID": "LabSessions/LabSession01/index.html#origin-of-the-lab-sessions",
-    "href": "LabSessions/LabSession01/index.html#origin-of-the-lab-sessions",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Origin of the Lab Sessions",
-    "text": "Origin of the Lab Sessions\n\n\n\nThis slide is based on lab sessions from An Introduction to Statistical Learning with Applications in Python book.\nYou can reach the original lab session files in .Rmd and .ipynb formats from here and here\n\nThere are three main differences between these slides and above mentioned original files:\n\nSlides does not require installing Python, Spyder, PyCharm, Anaconda, Jupyter Notebook or Google Colab (Although you can use this approach too).\nSlides have interactive version of the lab session examples. (You will understand what I mean when you see them)\nAll libraries and dataset will be pre-installed and pre-imported so you don’t have to worry about installing packages and importing datasets (Although you should be familiar how to do these.)."
-  },
-  {
-    "objectID": "LabSessions/LabSession01/index.html#getting-started",
-    "href": "LabSessions/LabSession01/index.html#getting-started",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Getting Started",
-    "text": "Getting Started\n\nAs you understand from the previous slide, using these slides is much easier than the original documents.\nYet, some of the packages may not be available for these slides and can not be installed. So, if such a problem arises you can always use the original lab-session documents.\nTo use the original version of the lab sessions you need to do two thing:\n\nAn installation of Python3, which is the specific version of Python used in the labs.\nAccess to Jupyter, a very popular Python interface that runs code through a file called a notebook."
-  },
-  {
-    "objectID": "LabSessions/LabSession01/index.html#exercise-3",
-    "href": "LabSessions/LabSession01/index.html#exercise-3",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Exercise 3",
-    "text": "Exercise 3\n\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n\n\n\nFigure 1: Temperature and ozone level."
-  },
-  {
-    "objectID": "LabSessions/LabSession01/index.html#exercise-4",
-    "href": "LabSessions/LabSession01/index.html#exercise-4",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Exercise 4",
-    "text": "Exercise 4\n\n2+2\n\n[1] 4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\nLab Session 01 - Intro. to R"
-  },
-  {
     "objectID": "LectureNotes/Week01/index.html#r-is-case-sensitive",
     "href": "LectureNotes/Week01/index.html#r-is-case-sensitive",
     "title": "Introduction to R Programming Lecture Notes",
@@ -708,32 +280,11 @@
     "text": "Saving and Loading Objects for Future Use (5)"
   },
   {
-    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences",
-    "href": "LectureNotes/Week01/index.html#generating-regular-sequences",
+    "objectID": "LectureNotes/Week01/index.html#working-with-different-types-of-data-in-r",
+    "href": "LectureNotes/Week01/index.html#working-with-different-types-of-data-in-r",
     "title": "Introduction to R Programming Lecture Notes",
-    "section": "Generating Regular Sequences",
-    "text": "Generating Regular Sequences\n\nA generalization of : is the seq() function.\n\nseq() takes 3 arguments.\n\n\nfrom states the start point,\n\nto states the end point.\nAs a third argument either by or length.out is used.\n\n\nby is used to specify the increment value, length.out is used to determine number of points.\n\n\n\n\n\n\n# generate a sequence of numbers from 1 to 21 by increments of 2\nseq(from = 1, to = 21, by = 2)\n\nGuess The Output? [1]  1  3  5  7  9 11 13 15 17 19 21\n\n\n\n\n# generate a sequence of numbers from 1 to 21 that has 15 equal\n# incremented numbers\nseq(0, 21, length.out = 15)\n\nGuess The Output? [1]  0.0  1.5  3.0  4.5  6.0  7.5  9.0 10.5 12.0 13.5 15.0 16.5 18.0 19.5 21.0\n\n\n\n\nThe rep() function allows to repeat specified constants into long vectors.\n\nrep() function takes two arguments:\n\nFirst argument is a number or numeric vector which indicates the numbers to be replicated.\nSecond argument is either times or each which is either a number or a numeric vector.\n\n\n\n\n# replicates the values in x a specified number of times\nrep(1:4, times = 2)\n\nGuess The Output?[1] 1 2 3 4 1 2 3 4\n\n\n\n\n# replicates the values in x in a collated fashion\nrep(1:4, each = 2)\n\nGuess The Output?[1] 1 1 2 2 3 3 4 4"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#comparison-operators-in-r-with-numeric-values",
-    "href": "LectureNotes/Week01/index.html#comparison-operators-in-r-with-numeric-values",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Comparison Operators in R with Numeric Values",
-    "text": "Comparison Operators in R with Numeric Values\n\n5 &lt; 8\n\nGuess The Output?[1] TRUE\n\n\n\n\n2 + 2 == 5\n\nGuess The Output?[1] FALSE\n\n\n\n\nT == TRUE\n\nGuess The Output?[1] TRUE\n\n\n\n\n3 * 3 == 9\n\nGuess The Output?[1] TRUE\n\n\n\n\n3 * 3 != 8\n\nGuess The Output?[1] TRUE\n\n\n\n\n3 * 3 != 9\n\nGuess The Output?[1] FALSE\n\n\n\n\nAlso we can use objects to make comparisons,\n\n\nx &lt;- 9\ny &lt;- 10\n\n\nx == y\n\nGuess The Output?[1] FALSE\n\n\n\n\nIn addition we can compare multiple elements in a vector,\n\n\nx &lt;- c(1, 4, 9, 12)\ny &lt;- c(4, 4, 9, 13)\n\n\nx == y\n\nGuess The Output?[1] FALSE  TRUE  TRUE FALSE\n\n\n\n\nNote that logical values TRUE and FALSE equate to 1 and 0 respectively. So,\n\n\n# How many pairwise equal values are in vectors x and y\nsum(x == y)\n\nGuess The Output?[1] 2\n\n\n\n\nIf you need to identify the location of pairwise equalities in two vectors you can wrap the operation in the which() function:\n\n\nwhich(x == y)\n\nGuess The Output?[1] 2 3"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#exact-equality",
-    "href": "LectureNotes/Week01/index.html#exact-equality",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Exact Equality",
-    "text": "Exact Equality\n\nTo test if two objects are exactly equal:\n\n\nx &lt;- c(4, 4, 9, 12)\ny &lt;- c(4, 4, 9, 13)\n\n\nidentical(x, y)\n\nGuess The Output?[1] FALSE\n\n\n\n\nx &lt;- c(4, 4, 9, 12)\ny &lt;- c(4, 4, 9, 12)\n\n\nidentical(x, y)\n\nGuess The Output?[1] TRUE"
-  },
-  {
-    "objectID": "LectureNotes/Week01/index.html#floating-point-comparison",
-    "href": "LectureNotes/Week01/index.html#floating-point-comparison",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Floating Point Comparison",
-    "text": "Floating Point Comparison\n\nSometimes you wish to test for “near equality”. The all.equal() function allows you to test for equality with a difference tolerance of 1.5e-8.\n\n\nx &lt;- c(4.00000005, 4.00000008)\ny &lt;- c(4.00000002, 4.00000006)\n\n\nall.equal(x, y)\n\nGuess The Output?[1] TRUE\n\n\n\n\nIf the difference is greater than the tolerance level the function will return the mean relative difference:\n\n\nx &lt;- c(4.005, 4.0008)\ny &lt;- c(4.002, 4.0006)\n\n\nall.equal(x, y)\n\nGuess The Output?[1] \"Mean relative difference: 0.0003997102\"\n\n\n\n\nYou can also change the amount of tolerance with the tolerance() argument.\n\n\nx &lt;- c(4.003, 4.000)\ny &lt;- c(4.002, 3.999)\n\n\nall.equal(x, y, tolerance = 1e-4)\n\nGuess The Output?[1] \"Mean relative difference: 0.0002499063\"\n\n\n\n\nall.equal(x, y, tolerance = 1e-1)\n\nGuess The Output?[1] TRUE"
+    "section": "Working with Different Types of Data in R",
+    "text": "Working with Different Types of Data in R\nR classifies all the different data types into five classes.\n\ninteger\nnumeric\ncharacter\ncomplex\nlogical"
   },
   {
     "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-1",
@@ -748,6 +299,34 @@
     "title": "Introduction to R Programming Lecture Notes",
     "section": "Generating Regular Sequences (2)",
     "text": "Generating Regular Sequences (2)\n\n# create a vector consisting of 1, 5, and 10\nc(1, 5, 10)\n\nGuess The Output?[1]  1  5 10"
+  },
+  {
+    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-3",
+    "href": "LectureNotes/Week01/index.html#generating-regular-sequences-3",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Generating Regular Sequences (3)",
+    "text": "Generating Regular Sequences (3)\n\nA generalization of : is the seq() function.\n\nseq() takes 3 arguments.\n\n\nfrom states the start point,\n\nto states the end point.\nAs a third argument either by or length.out is used.\n\n\nby is used to specify the increment value, length.out is used to determine number of points.\n\n\n\n\n\n\n# generate a sequence of numbers from 1 to 21 by increments of 2\nseq(from = 1, to = 21, by = 2)\n\nGuess The Output? [1]  1  3  5  7  9 11 13 15 17 19 21"
+  },
+  {
+    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-4",
+    "href": "LectureNotes/Week01/index.html#generating-regular-sequences-4",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Generating Regular Sequences (4)",
+    "text": "Generating Regular Sequences (4)\n\n# generate a sequence of numbers from 1 to 21 that has 15 equal\n# incremented numbers\nseq(0, 21, length.out = 15)\n\nGuess The Output? [1]  0.0  1.5  3.0  4.5  6.0  7.5  9.0 10.5 12.0 13.5 15.0 16.5 18.0 19.5 21.0"
+  },
+  {
+    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-5",
+    "href": "LectureNotes/Week01/index.html#generating-regular-sequences-5",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Generating Regular Sequences (5)",
+    "text": "Generating Regular Sequences (5)\n\nThe rep() function allows to repeat specified constants into long vectors.\n\nrep() function takes two arguments:\n\nFirst argument is a number or numeric vector which indicates the numbers to be replicated.\nSecond argument is either times or each which is either a number or a numeric vector.\n\n\n\n\n# replicates the values in x a specified number of times\nrep(1:4, times = 2)\n\nGuess The Output?[1] 1 2 3 4 1 2 3 4"
+  },
+  {
+    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-6",
+    "href": "LectureNotes/Week01/index.html#generating-regular-sequences-6",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Generating Regular Sequences (6)",
+    "text": "Generating Regular Sequences (6)\n\n# replicates the values in x in a collated fashion\nrep(1:4, each = 2)\n\nGuess The Output?[1] 1 1 2 2 3 3 4 4"
   },
   {
     "objectID": "LectureNotes/Week01/index.html#comparison-operators-in-r-with-numeric-values-1",
@@ -776,6 +355,13 @@
     "title": "Introduction to R Programming Lecture Notes",
     "section": "Comparison Operators in R with Numeric Values (4)",
     "text": "Comparison Operators in R with Numeric Values (4)\n\nIn addition we can compare multiple elements in a vector,\n\n\nx &lt;- c(1, 4, 9, 12)\ny &lt;- c(4, 4, 9, 13)\n\n\n\nx == y\n\nGuess The Output?[1] FALSE  TRUE  TRUE FALSE"
+  },
+  {
+    "objectID": "LectureNotes/Week01/index.html#comparison-operators-in-r-with-numeric-values-5",
+    "href": "LectureNotes/Week01/index.html#comparison-operators-in-r-with-numeric-values-5",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Comparison Operators in R with Numeric Values (5)",
+    "text": "Comparison Operators in R with Numeric Values (5)\n\nNote that logical values TRUE and FALSE equate to 1 and 0 respectively. So,\n\n\n# How many pairwise equal values are in vectors x and y\nsum(x == y)\n\nGuess The Output?[1] 2\n\n\n\n\nIf you need to identify the location of pairwise equalities in two vectors you can wrap the operation in the which() function:\n\n\nwhich(x == y)\n\nGuess The Output?[1] 2 3"
   },
   {
     "objectID": "LectureNotes/Week01/index.html#exact-equality-1",
@@ -827,38 +413,320 @@
     "text": "Comparison Operators in R with Numeric Values (2)\n\n# Round up\nceiling(x)\n\nGuess The Output? [1] 1 2 2 3 3 3 4 4 4 5 5 5 6 6 6\n\n\n\n\n# Round down\nfloor(x)\n\nGuess The Output? [1] 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5\n\n\n\n\n# Round to a specified decimal\nround(x, digits = 1)\n\nGuess The Output? [1] 1.0 1.4 1.7 2.0 2.4 2.8 3.1 3.5 3.8 4.2 4.5 4.8 5.2 5.6 5.9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\nWeek 1 - Basics of R"
   },
   {
-    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-3",
-    "href": "LectureNotes/Week01/index.html#generating-regular-sequences-3",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Generating Regular Sequences (3)",
-    "text": "Generating Regular Sequences (3)\n\nA generalization of : is the seq() function.\n\nseq() takes 3 arguments.\n\n\nfrom states the start point,\n\nto states the end point.\nAs a third argument either by or length.out is used.\n\n\nby is used to specify the increment value, length.out is used to determine number of points.\n\n\n\n\n\n\n# generate a sequence of numbers from 1 to 21 by increments of 2\nseq(from = 1, to = 21, by = 2)\n\nGuess The Output? [1]  1  3  5  7  9 11 13 15 17 19 21"
+    "objectID": "LabSession01Main.html",
+    "href": "LabSession01Main.html",
+    "title": "Lab Session 01",
+    "section": "",
+    "text": "You can switch to full screen mode by pressing ff.\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "About the Instructor!",
+      "Week 01 - Introduction to R",
+      "Lab Session 01"
+    ]
   },
   {
-    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-4",
-    "href": "LectureNotes/Week01/index.html#generating-regular-sequences-4",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Generating Regular Sequences (4)",
-    "text": "Generating Regular Sequences (4)\n\n# generate a sequence of numbers from 1 to 21 that has 15 equal\n# incremented numbers\nseq(0, 21, length.out = 15)\n\nGuess The Output? [1]  0.0  1.5  3.0  4.5  6.0  7.5  9.0 10.5 12.0 13.5 15.0 16.5 18.0 19.5 21.0"
+    "objectID": "exercises/sum_vector.html",
+    "href": "exercises/sum_vector.html",
+    "title": "Question",
+    "section": "",
+    "text": "Question\nConsider the following vector in R: \\[v1 = 8, 5, 6, 9, 3\\] What is the output of the following R Code: \\[sum(v1)\\]\n\n\nSolution\nWe need to calculate the sum of all the elements in the vector with a help of r function such as sum().\n\\[8+5+6+9+3 = 31\\]\n\n\nMeta-information\nextype: num exsolution: 31 extol: 0.01 exname: sum of a vector\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-5",
-    "href": "LectureNotes/Week01/index.html#generating-regular-sequences-5",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Generating Regular Sequences (5)",
-    "text": "Generating Regular Sequences (5)\n\nThe rep() function allows to repeat specified constants into long vectors.\n\nrep() function takes two arguments:\n\nFirst argument is a number or numeric vector which indicates the numbers to be replicated.\nSecond argument is either times or each which is either a number or a numeric vector.\n\n\n\n\n# replicates the values in x a specified number of times\nrep(1:4, times = 2)\n\nGuess The Output?[1] 1 2 3 4 1 2 3 4"
+    "objectID": "01--01--Data--Types--Main.html",
+    "href": "01--01--Data--Types--Main.html",
+    "title": "Week 01 – Basics of R",
+    "section": "",
+    "text": "You can switch to full screen mode by pressing ff.\n\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "About the Instructor!",
+      "Week 01 - Introduction to R",
+      "Week 01 -- Basics of R"
+    ]
   },
   {
-    "objectID": "LectureNotes/Week01/index.html#generating-regular-sequences-6",
-    "href": "LectureNotes/Week01/index.html#generating-regular-sequences-6",
-    "title": "Introduction to R Programming Lecture Notes",
-    "section": "Generating Regular Sequences (6)",
-    "text": "Generating Regular Sequences (6)\n\n# replicates the values in x in a collated fashion\nrep(1:4, each = 2)\n\nGuess The Output?[1] 1 1 2 2 3 3 4 4"
+    "objectID": "00--07--How--to--use--this--Webpage.html",
+    "href": "00--07--How--to--use--this--Webpage.html",
+    "title": "How to use this webpage?",
+    "section": "",
+    "text": "This webpage is most likely different from other lecture notes you encountered.",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "How to use this webpage?"
+    ]
   },
   {
-    "objectID": "LectureNotes/Week01/index.html#comparison-operators-in-r-with-numeric-values-5",
-    "href": "LectureNotes/Week01/index.html#comparison-operators-in-r-with-numeric-values-5",
+    "objectID": "00--07--How--to--use--this--Webpage.html#sample-question",
+    "href": "00--07--How--to--use--this--Webpage.html#sample-question",
+    "title": "How to use this webpage?",
+    "section": "Sample Question",
+    "text": "Sample Question\n\nIf the desired output is 8 what should come to the ______?\n\n\nSample QuestionSolution to Sample Question\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n3 + 5 \n3 + 5 \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\n\nYou will see that, this grading schema is not perfect and we will encounter some bugs throughout the process.\nIf you encounter any bugs such as\n\nyou wrote a correct answer and the evaluation says it is incorrect or\n\nyou wrote an incorrect answer and the evaluation says it is correct or\nyou find a shortcut to answer a question although it should not be considered as correct please warn the lecturer.\n\n\n\n\n\nSample Question 2\n\n\nConsider the following vector in R: \\[v1 = 2, 3, 8, 10, 5\\] What is the output of the following R Code: \\[sum(v1)\\]\n\n\n\nWe need to calculate the sum of all the elements in the vector with a help of r function such as sum().\n\\[2+3+8+10+5 = 28\\]\n\n\n\n\nSample Questions 3\n\n---\nprimary_color: orange\nsecondary_color: lightgray\ntext_color: black\nshuffle_questions: false\nshuffle_answers: true\n---\n\n# Python Lists\n\nWhat is the value of `x[2]`?\n\n&gt; Python lists are mutable!\n\n~~~python\nx = [2, 3, 4]\nx[2] = 4\nprint(x[2])\n~~~\n\n- [ ] 1\n- [ ] 2\n- [ ] 3\n- [x] 4\n\n## The sound of dog\n\nWhat do dogs sound like?\n\n&gt; Some hint\n\n- [ ] yes\n- [ ] no\n- [ ] `self.sound = \"meow\"`\n- [x] wuff\n\n## Put the [days](https://en.wikipedia.org/wiki/Day) in order!\n\n&gt; Monday is the *first* day of the week.\n\n1. Monday\n2. Tuesday\n3. Wednesday\n4. Friday\n5. Saturday  \n\n\nSample Question 4Solution to Sample Question\n\n\n\nrand_int = Math.floor(Math.random() * 10000);\n\n\n\n\n\n\nWrite an R function that takes a single variable x and returns that value multiplied by .\n\n\n\n\n\n\n\n\n\n\n\n\n\nmy_function &lt;- function(x) {\n  x * ${rand_int}\n}\nmy_function &lt;- function(x) {\n  x * ${rand_int}\n}",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "How to use this webpage?"
+    ]
+  },
+  {
+    "objectID": "00--05--Materials.html",
+    "href": "00--05--Materials.html",
+    "title": "Materials",
+    "section": "",
+    "text": "IST3110 Lecture notes, Cene, E. (This webpage)\nR for Data Science, Garrett Grolemund, Hadley Wickham For the free book please click\nR Programming for Data Science, Roger D. Peng, For the free book please click\nPractical Data Science with R, Nina Zumel\nData Manipulation with R, Phil Spector\nEfficient R programming, Colin Gillespie For the free book please click\nExploratory Data Analysis with R, Roger D. Peng For the free book please click\nR Graphics Cookbook, Winston Chang For the free book please click\nggplot2: Elegant Graphics for Data Analysis (3e), Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen. For the free book please click\nTidy Modeling with R, Max Kuhn and Julia Silge For the free book please click\nHands-On Programming with R, Garrett Grolemund For the free book please click\nAdvanced R, Hadley Wickham For the free book please click\nIntroduction to Statistical Learning with Applications in R, Gareth James For the free book please click\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "Materials"
+    ]
+  },
+  {
+    "objectID": "00--03--Syllabus.html",
+    "href": "00--03--Syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Draft means that dates and contents may change based on the conditions.\n\n\n\n\n\n\n\n\nWeek\nDate\nContent\n\n\n\n\n1\n17 February 2025 Monday\nPreface, General Info, Installing R and RStudio, Basic Calculations, Data Types in R: Vectors, Factors, Matrix, Data Frames, Lists.  Importing data  Lab Session 1 \n\n\n2\n24 February 2025 Monday\nControl Statements, Data Cleaning, Handling Missing Values  Lab Session 2 \n\n\n3\n03 March 2025 Monday\nExploratory Data Analysis and Data Visualization: ggplot\n\n\n4\n10 March 2025 Monday\nData Manipulation with dplyr \n\n\n5\n17 March 2025 Monday\nLab Session 3: babynames \n\n\n6\n24 March 2025 Monday\nHypothesis testing and Inferential Statistics: Rstatix  Visualisation with ggpubr  Lab Session 4: Hypothesis Tests and Inferential Statistics\n\n\n7\n31 March 2025 Monday\nRAMADAN HOLIDAY (NO LECTURE) \n\n\n8\n07 April 2025 Monday\nMidterm 1\n\n\n9\n14 April 2025 Monday\nIntroduction to Statistical Learning, CARET package  Splitting the data into train and test datasets\n\n\n10\n21 April 2025 Monday\nSupervised Learning 1: Classification\n\n\n11\n28 April 2025 Monday\nSupervised Learning 2: Regression\n\n\n12\n05 May 2025 Monday\nLab Session 5: Supervised Learning \n\n\n13\n12 May 2025 Monday\n Midterm 2\n\n\n14\n19 May 2025 Monday\nCommemoration of Atatürk, Youth and Sports Day (NO LECTURE) \n\n\n15\n26 May 2025 Monday\nUnsupervised Learning: Cluster Analysis, Principle Component Analysis (PCA)  Lab Session 6: Unsupervised Learning",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "00--03--Syllabus.html#weekly-draft-course-plan",
+    "href": "00--03--Syllabus.html#weekly-draft-course-plan",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Draft means that dates and contents may change based on the conditions.\n\n\n\n\n\n\n\n\nWeek\nDate\nContent\n\n\n\n\n1\n17 February 2025 Monday\nPreface, General Info, Installing R and RStudio, Basic Calculations, Data Types in R: Vectors, Factors, Matrix, Data Frames, Lists.  Importing data  Lab Session 1 \n\n\n2\n24 February 2025 Monday\nControl Statements, Data Cleaning, Handling Missing Values  Lab Session 2 \n\n\n3\n03 March 2025 Monday\nExploratory Data Analysis and Data Visualization: ggplot\n\n\n4\n10 March 2025 Monday\nData Manipulation with dplyr \n\n\n5\n17 March 2025 Monday\nLab Session 3: babynames \n\n\n6\n24 March 2025 Monday\nHypothesis testing and Inferential Statistics: Rstatix  Visualisation with ggpubr  Lab Session 4: Hypothesis Tests and Inferential Statistics\n\n\n7\n31 March 2025 Monday\nRAMADAN HOLIDAY (NO LECTURE) \n\n\n8\n07 April 2025 Monday\nMidterm 1\n\n\n9\n14 April 2025 Monday\nIntroduction to Statistical Learning, CARET package  Splitting the data into train and test datasets\n\n\n10\n21 April 2025 Monday\nSupervised Learning 1: Classification\n\n\n11\n28 April 2025 Monday\nSupervised Learning 2: Regression\n\n\n12\n05 May 2025 Monday\nLab Session 5: Supervised Learning \n\n\n13\n12 May 2025 Monday\n Midterm 2\n\n\n14\n19 May 2025 Monday\nCommemoration of Atatürk, Youth and Sports Day (NO LECTURE) \n\n\n15\n26 May 2025 Monday\nUnsupervised Learning: Cluster Analysis, Principle Component Analysis (PCA)  Lab Session 6: Unsupervised Learning",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "00--01--General--Info.html",
+    "href": "00--01--General--Info.html",
+    "title": "General Info",
+    "section": "",
+    "text": "Analytical thinking and ability to solve problems.\nInterest in statistical programming.\nHaving time to investigate and curiosity.",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "General Info"
+    ]
+  },
+  {
+    "objectID": "00--01--General--Info.html#what-is-the-prequisite-for-this-course",
+    "href": "00--01--General--Info.html#what-is-the-prequisite-for-this-course",
+    "title": "General Info",
+    "section": "",
+    "text": "Analytical thinking and ability to solve problems.\nInterest in statistical programming.\nHaving time to investigate and curiosity.",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "General Info"
+    ]
+  },
+  {
+    "objectID": "00--01--General--Info.html#which-programs-you-should-download-and-install",
+    "href": "00--01--General--Info.html#which-programs-you-should-download-and-install",
+    "title": "General Info",
+    "section": "Which programs you should download and install",
+    "text": "Which programs you should download and install\n\nR programming language (required) (the link for CRAN project).\nRStudio (Not required but strongly recommended) (the website of RStudio)",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "General Info"
+    ]
+  },
+  {
+    "objectID": "00--01--General--Info.html#what-this-course-will-cover",
+    "href": "00--01--General--Info.html#what-this-course-will-cover",
+    "title": "General Info",
+    "section": "What this course will cover",
+    "text": "What this course will cover\nThis course mainly divided into four parts.\n\nIntroduction to R.\nData wrangling with R.\nData visualization with R.\nHypothesis testing with R.\nIntroduction to Machine Learning with R.",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "General Info"
+    ]
+  },
+  {
+    "objectID": "00--01--General--Info.html#what-you-will-learn-after-each-section",
+    "href": "00--01--General--Info.html#what-you-will-learn-after-each-section",
+    "title": "General Info",
+    "section": "What you will learn after each section",
+    "text": "What you will learn after each section\n\nAfter the Introduction to R section you will learn:\n\nHow to work with different Data Types in R.\nHow to import and export data in different formats.\nHow to deal with dates.\nHow to develop your own functions and use loop control structures to reduce code redundancy.\n\nIn this part you will mostly use:\n\nBase R functions\nreadr, write_xl for importing and exporting data.\nlubridate package for dealing with dates.\n\nAfter the Data wrangling with R section you will learn\n\nHow to use pipe operators to simplify your code and make it more readable.\nHow to reshape the layout of your data, and manipulate, summarize, and join data sets.\n\nIn this part you will mostly use:\n\ndplyr\ntidyr\n\nAfter the Data visualization with R section you will learn\n\nWhich graphical methods is suitable for your data.\nHow to prepare and transform the data for visualization.\nHow to make visualizations with ggplot.\nHow to integrate pipe operator with ggplot.\n\nIn this part you will mostly use:\n\nbase r functions for visualizations\nggplot\n\nAfter the Hypothesis testing with R section you will learn\n\nHow to make basic statistical hypothesis testing with R.\n\nIn this part you will mostly use:\n\nrstatix\n\nAfter the Introduction to Machine Learning with R section you will learn.\n\nWhat is machine learning?\nWhat is train and test data?\nWhat are the types of machine learning?\nHow to implement classification algorithms, regression algorithms and principle component analysis in R.\n\nIn this part you will mostly use:\n\ncaret",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "General Info"
+    ]
+  },
+  {
+    "objectID": "00--02--Installing--R--and--RStudio.html",
+    "href": "00--02--Installing--R--and--RStudio.html",
+    "title": "R and RStudio",
+    "section": "",
+    "text": "R is a suite of software facilities for:\n\nReading and manipulating data\nComputation\nConducting statistical data analysis\nApplication and development of Machine Learning Algorithms\nDisplaying the results\n\nR is the open-source version (i.e. freely available version - no license fee) of the S programming language, a language for manipulating objects.\nSoftware and packages can be downloaded from the link for CRAN project\n\n\n\n\n\n\nR Console",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "R and RStudio"
+    ]
+  },
+  {
+    "objectID": "00--02--Installing--R--and--RStudio.html#what-is-r",
+    "href": "00--02--Installing--R--and--RStudio.html#what-is-r",
+    "title": "R and RStudio",
+    "section": "",
+    "text": "R is a suite of software facilities for:\n\nReading and manipulating data\nComputation\nConducting statistical data analysis\nApplication and development of Machine Learning Algorithms\nDisplaying the results\n\nR is the open-source version (i.e. freely available version - no license fee) of the S programming language, a language for manipulating objects.\nSoftware and packages can be downloaded from the link for CRAN project\n\n\n\n\n\n\nR Console",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "R and RStudio"
+    ]
+  },
+  {
+    "objectID": "00--02--Installing--R--and--RStudio.html#rstudio",
+    "href": "00--02--Installing--R--and--RStudio.html#rstudio",
+    "title": "R and RStudio",
+    "section": "RStudio",
+    "text": "RStudio\n\nThe R Console by itself is not very interesting and useful. A tool named RStudio is designed to use R more efficient and easily.\nRStudio can be installed after installing R.\nRStudio won’t work without R. R has to be installed on your computer.\nYou can think RStudio as an upgrade of R, on visual and functionality terms. It doesn’t add anything that R cannot do.\nRStudio can be downloaded from the website of RStudio\n\n\n\n\n\n\nRStudio General View\n\n\n\n\n\nRStudio have 4 main parts:\n\n\n\n\n\n\nRStudio description of windows",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "R and RStudio"
+    ]
+  },
+  {
+    "objectID": "00--02--Installing--R--and--RStudio.html#using-r-and-rstudio-from-posit-cloud",
+    "href": "00--02--Installing--R--and--RStudio.html#using-r-and-rstudio-from-posit-cloud",
+    "title": "R and RStudio",
+    "section": "Using R and RStudio from Posit Cloud",
+    "text": "Using R and RStudio from Posit Cloud\n\nIf you are a beginner at R and will only use it for the lecture then you may not want to install it into your computer.\nA great alternative for this is to use Posit Cloud.\nPosit is the company that is the founder of RStudio and provides a cloud solution for using R and Rstudio.\nFirst, go to the website of Posit\nClick Sign Up at the upper right part of the page\n\n\n\n\n\n\nPosit Main Page\n\n\n\n\n\nThen, select the free plan and click Learn more.\nThe Free Plan gives you 25 hours of computing time per month which should be sufficient for this course.\nIf you ever think that you are going to exceed the limit you can always download and install R and RStudio to your computer for free.\n\n\n\n\n\n\nSelect Posit Free Plan\n\n\n\n\n\nClick Sign Up at the next page.\n\n\n\n\n\n\nSign Up Posit Free Plan\n\n\n\n\n\nEnter your e-mail, a password, your name and your surname to register to posit cloud.\n\n\n\n\n\n\nRegister Posit Free Plan\n\n\n\n\n\nAfter registering and possibly confirming your mail address, you can login with your e-mail and password.\nYou will encounter the following page when you successfully login to the Posit Cloud.\nSelect New Project and New RStudio Project from the upper right buttons.\n\n\n\n\n\n\nRegister Posit Free Plan\n\n\n\n\n\nAfter a short period of deployment time, a fresh Rstudio will open as in the following picture.\n\n\n\n\n\n\nPosit Cloud Main Screen\n\n\n\n\n\nGive a new name to your project and open a R script to work on from the menu File \\(\\rightarrow\\) New File \\(\\rightarrow\\) R Script.\n\n\n\n\n\n\nRStudio Main Screen\n\n\n\n\n\nNow you can start to use RStudio in cloud and make your computations.\n\n\n\n\n\n\nRStudio with an Open Script",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "R and RStudio"
+    ]
+  },
+  {
+    "objectID": "00--02--Installing--R--and--RStudio.html#advantages-of-r",
+    "href": "00--02--Installing--R--and--RStudio.html#advantages-of-r",
+    "title": "R and RStudio",
+    "section": "Advantages of R",
+    "text": "Advantages of R\n\nOpen Source:\n\nThere is no clear difference between user and developer.\nA unique solution for the given problem can be constructed.\nYou are not limited to pre-defined options by a fixed user interface as is common in proprietary software.\nOpen source also allows to use the program freely without spending any money.\n\nFlexibility:\n\nGives access to the source code, allows to modify and improve it according to the needs.\nAbility to further developments and capacity increase with tools like RStudio and Shiny.\nNew packages to solve a certain problem is consistently added to the R repository.\nAbility to produce reports in PDF and HTML format.\n\nCommunity:\n\nR has a lot of material in online platforms, in books and in courses.\nA lot of information can be found via Q&A websites, social media networks, and numerous blogs.",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "R and RStudio"
+    ]
+  },
+  {
+    "objectID": "00--04--Evaluation.html",
+    "href": "00--04--Evaluation.html",
+    "title": "Evaluation of the Course",
+    "section": "",
+    "text": "There will be one midterm (25%).\nSix quizzes (total 25%, with different weights). Quizzes will be conducted on FEFMOD. You will need to download Safe Exam Browser into your phones to participate the quizzes.\nOne final exam (40%).\nMidterm and final exams will be conducted on paper with multiple choice questions.\nThe midterm 1 possibly will take place on  Week 8 - 07-11 April 2025 .\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "Evaluation of the Course"
+    ]
+  },
+  {
+    "objectID": "00--06--Useful--Websites.html",
+    "href": "00--06--Useful--Websites.html",
+    "title": "Useful Websites",
+    "section": "",
+    "text": "Typically, a problem you may be encountering is not new and others have faced, solved, and documented the same issue online.\n\nThe following resources can be used to search for online help. Although, I typically just google the problem and find answers relatively quickly.\nRSiteSearch(“key phrase”): searches for the key phrase in help manuals and archived mailing lists on the R Project website at http://search.r-project.org/.\nStack Overflow: a searchable Q&A site oriented toward programming issues. 75 % of my answers typically come from Stack Overflow questions tagged for R at stackoverflow.\nCross Validated: a searchable Q&A site oriented toward statistical analysis. Many questions regarding specific statistical functions in R are tagged for R at crossvalidated.\nR–seek: a Google custom search that is focused on R-specific websites. Located at rseek\nR -bloggers: a central hub of content collected from over 500 bloggers who provide news and tutorials about R. Located at rbloggers.\nChatGPT obviously chatgpt.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "Useful Websites"
+    ]
+  },
+  {
+    "objectID": "01--01--basicsR.html#writing-your-first-script",
+    "href": "01--01--basicsR.html#writing-your-first-script",
+    "title": "Basics of R Programming Language",
+    "section": "Writing Your First Script",
+    "text": "Writing Your First Script\n\nYou can either write a code directly into the console or you can use a script.\nUsing a script is more efficient. Because it is easier to write modify and save a R Code in a script.\nOpen a script with File \\(\\rightarrow\\) New File \\(\\rightarrow\\) R Script or you can use shortcut Ctrl + Shift + N"
+  },
+  {
+    "objectID": "01--01--basicsR.html#objects",
+    "href": "01--01--basicsR.html#objects",
+    "title": "Basics of R Programming Language",
+    "section": "Objects",
+    "text": "Objects\n\nR works by creating objects and using various functions calls that create and use these objects. For example;\n\nVectors of numbers, logical values (TRUE and FALSE), character strings and even complex numbers.\nMatrices and general n-way arrays\nLists - arbitrary collections of objects of any type; e.g. list of vectors, list of matrices, etc.\nData frames - a general data set type\nfunctions (yes even functions are objects)"
+  },
+  {
+    "objectID": "01--01--basicsR.html#defining-variables-in-r",
+    "href": "01--01--basicsR.html#defining-variables-in-r",
+    "title": "Basics of R Programming Language",
+    "section": "Defining Variables in R",
+    "text": "Defining Variables in R\n\nYou can either use a = or &lt;- operators to define a variable in R. Though both of them are fine, &lt;- is a more common approach while using R.\n\n\nExercise 1\n\nExercise 1 QuestionSolution to Exercise 1\n\n\n\nCreate a variable x and assign value 5.\nCreate another variable y and assign value 8.\nCreate a third variable z and assign sum of x and y.\nFinally print the value z to the console.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\n\n\n\n\n\n\n\n\n\n\n\nExercise 2\n\nExercise 2 QuestionSolution to Exercise 2\n\n\n\nCreate a variable x and assign value 5.\nCreate another variable y and assign value 8.\nCreate a third variable z and assign sum of x and y.\nFinally print the value z to the console.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\nx = 5\ny &lt;- 8\nz &lt;- x+y\nz\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote 1: Using print vs not using print\n\n\n\n\n\nYou do not have to wrap an object with print() function in R. Both z and print(z) would give the same output in R. One case that you would prefer to use print() function is inside the loops (for(), if(), while() etc.).  Without a print() function the objects inside a loop won’t be printed at the console."
+  },
+  {
+    "objectID": "01--01--basicsR.html#exercise-3",
+    "href": "01--01--basicsR.html#exercise-3",
+    "title": "Basics of R Programming Language",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\n\nCode\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n\n\n\n\n\n\n\n\nFigure 1: Temperature and ozone level."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the Instructor!",
+    "section": "",
+    "text": "I am Erhan Cene, working as an associate professor at the Yildiz Technical University, Istanbul, Turkey in the department of statistics (see university webpage).\nMy broad research interest is on data science and statistical programming especially (but not limited to) in sports analytics and biostatistics (see publication list).\nI mostly give programming courses such as Introduction to Python, Statistical Programming with R, Database and Web Programming along with the Sampling 1 course at the undergraduate level and Data Manipulation and Visualisation course at the graduate level.\nI started to prepare the lecture notes in Rmarkdown format a few years ago, then combined them via bookdown package for better and tidy look. With bookdown I also learned to use GitHub Pages and now I started to use Quarto to add some interactivity on my lecture notes.\nYou can contact with me through linkedin for any enquiry and possible collaboration.\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Preface",
+    "section": "",
+    "text": "This book is created for accompanying lecture notes for the undergraduate course IST3110 - Statistical Programming with R.\nThe motivation behind this book is to provide a comprehensive and easy to understand lecture notes in a tidy way.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "About the Instructor!",
+      "Before Starting - Week 0",
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#title-slide",
+    "href": "LabSessions/LabSession01/index.html#title-slide",
     "title": "Introduction to R Programming Lecture Notes",
-    "section": "Comparison Operators in R with Numeric Values (5)",
-    "text": "Comparison Operators in R with Numeric Values (5)\n\nNote that logical values TRUE and FALSE equate to 1 and 0 respectively. So,\n\n\n# How many pairwise equal values are in vectors x and y\nsum(x == y)\n\nGuess The Output?[1] 2\n\n\n\n\nIf you need to identify the location of pairwise equalities in two vectors you can wrap the operation in the which() function:\n\n\nwhich(x == y)\n\nGuess The Output?[1] 2 3"
+    "section": "",
+    "text": "Introduction to Programming with R\nLab Session 01 - Introduction to R\n\nErhan Ceneecene@yildiz.edu.trYildiz Technical University, Department of Statistics\n\n\nPublished: Oct 10, 2022\n\nLast updated: Jul 15, 2025"
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#origin-of-the-lab-sessions",
+    "href": "LabSessions/LabSession01/index.html#origin-of-the-lab-sessions",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Origin of the Lab Sessions",
+    "text": "Origin of the Lab Sessions\n\n\n\nThis slide is based on lab sessions from An Introduction to Statistical Learning with Applications in Python book.\nYou can reach the original lab session files in .Rmd and .ipynb formats from here and here\n\nThere are three main differences between these slides and above mentioned original files:\n\nSlides does not require installing Python, Spyder, PyCharm, Anaconda, Jupyter Notebook or Google Colab (Although you can use this approach too).\nSlides have interactive version of the lab session examples. (You will understand what I mean when you see them)\nAll libraries and dataset will be pre-installed and pre-imported so you don’t have to worry about installing packages and importing datasets (Although you should be familiar how to do these.)."
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#getting-started",
+    "href": "LabSessions/LabSession01/index.html#getting-started",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nAs you understand from the previous slide, using these slides is much easier than the original documents.\nYet, some of the packages may not be available for these slides and can not be installed. So, if such a problem arises you can always use the original lab-session documents.\nTo use the original version of the lab sessions you need to do two thing:\n\nAn installation of Python3, which is the specific version of Python used in the labs.\nAccess to Jupyter, a very popular Python interface that runs code through a file called a notebook."
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#exercise-3",
+    "href": "LabSessions/LabSession01/index.html#exercise-3",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n\n\n\nFigure 1: Temperature and ozone level."
+  },
+  {
+    "objectID": "LabSessions/LabSession01/index.html#exercise-4",
+    "href": "LabSessions/LabSession01/index.html#exercise-4",
+    "title": "Introduction to R Programming Lecture Notes",
+    "section": "Exercise 4",
+    "text": "Exercise 4\n\n2+2\n\n[1] 4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\nLab Session 01 - Intro. to R"
   }
 ]
