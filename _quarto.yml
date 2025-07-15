@@ -33,7 +33,6 @@ website:
         - 00--07--How--to--use--this--Webpage.qmd
       - section: Week 01 - Introduction to R
         contents: 
-          - 01--01--basicsR.qmd
           - 01--01--Data--Types--Main.qmd
           - LabSession01Main.qmd
   page-footer:
